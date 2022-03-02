@@ -1,49 +1,30 @@
 function init(self)
-	go.property("diameter", 5000)
-    go.property("particle_count", 500)
+	go.property("diameter", 1000)
+    go.property("particle_count", 50)
 
     local pos = go.get_position()
     local max = vmath.vector3(self.diameter, self.diameter, 0)
     for i = 1, self.particle_count do
-        local distance = max / math.random(self.diameter)
+        local distance = max - vmath.vector3(math.random(self.diameter), math.random(self.diameter), 0)
         distance = vmath.rotate(vmath.quat_rotation_z(math.rad(math.random(360))), distance)
         distance = pos + distance
-        factory.create("#factory", pos)
+
+        local parallax_lvl = math.random(3)
+        local star = factory.create("#factory", distance, vmath.quat_rotation_z(math.rad(math.random(360))))
+        go.set_parent(star, "parallax_" .. parallax_lvl)
+
+        local sprite_url = msg.url(star)
+        sprite_url.fragment = "sprite"
+
+        local tint_a = 1
+        if parallax_lvl == 1 then
+            tint_a = 0.5
+        elseif parallax_lvl == 2 then
+            tint_a = 0.4
+        else
+            tint_a = 0.3
+        end
+
+        go.set(sprite_url, "tint.w", tint_a)
     end
-end
-
-function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function update(self, dt)
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
-end
-
-function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
-	--
-	--    msg.post(".", "acquire_input_focus")
-	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
-end
-
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
 end

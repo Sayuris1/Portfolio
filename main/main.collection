@@ -16,9 +16,29 @@ instances {
   component_properties {
     id: "script"
     properties {
+      id: "near_z"
+      value: "-10.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "far_z"
+      value: "10.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "follow"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
       id: "follow_target"
-      value: "\"/player\""
+      value: "/player"
       type: PROPERTY_TYPE_HASH
+    }
+    properties {
+      id: "follow_lerp"
+      value: "0.02"
+      type: PROPERTY_TYPE_NUMBER
     }
   }
   scale3 {
@@ -51,8 +71,8 @@ instances {
   id: "cloud_gen"
   prototype: "/prefabs/particle_cloud/cloud_gen.go"
   position {
-    x: 0.0
-    y: 0.0
+    x: 94.0
+    y: 14.0
     z: 0.0
   }
   rotation {
@@ -62,9 +82,69 @@ instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.2
+    y: 0.2
+    z: 0.2
   }
 }
 scale_along_z: 0
+embedded_instances {
+  id: "parallax_1"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: -1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.8
+    y: 0.8
+    z: 0.8
+  }
+}
+embedded_instances {
+  id: "parallax_3"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: -3.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.4
+    y: 0.4
+    z: 0.4
+  }
+}
+embedded_instances {
+  id: "parallax_2"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: -2.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.6
+    y: 0.6
+    z: 0.6
+  }
+}
