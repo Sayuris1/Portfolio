@@ -1,6 +1,6 @@
 components {
   id: "script"
-  component: "/prefabs/particle_cloud/cloud_gen.script"
+  component: "/prefabs/particle_star/cloud_gen.script"
   position {
     x: 0.0
     y: 0.0
@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "factory"
   type: "factory"
-  data: "prototype: \"/prefabs/particle_cloud/cloud_particle.go\"\n"
+  data: "prototype: \"/prefabs/particle_star/star_particle.go\"\n"
   "load_dynamically: false\n"
   ""
   position {

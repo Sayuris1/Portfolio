@@ -3,7 +3,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/atlases/main.atlas\"\n"
   "default_animation: \"star\"\n"
-  "material: \"/assets/materials/parallax/sprite.material\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
