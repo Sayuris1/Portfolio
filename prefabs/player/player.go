@@ -18,7 +18,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/atlas/main.atlas\"\n"
   "default_animation: \"ship\"\n"
-  "material: \"/assets/material/sprite.material\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
