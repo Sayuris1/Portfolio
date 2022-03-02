@@ -45,8 +45,14 @@ float fbm (vec2 st) {
 }
 
 void main() {
-    vec3 color = vec3(0.0);
-    color += smoothstep(0.6, 0.7, fbm(var_xy * 2.0));
+    vec2 st = gl_FragCoord.xy/vec2(640.0, 720.0);
+
+    vec3 from = vec3(0.05, 0.05, 0.22);
+    vec3 to = vec3(0.01, 0.01, 0.044);
+    vec3 weight = vec3(st.y, st.y, st.y);
     
-    gl_FragColor = vec4(color, 0.1);
+    vec3 color = mix(from, to, weight);
+    color += smoothstep(0.6, 0.7, fbm(var_xy * 2.0)) * 0.1;
+    
+    gl_FragColor = vec4(color, 1.0);
 }
