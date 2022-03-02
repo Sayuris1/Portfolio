@@ -36,7 +36,9 @@ end
 
 function update(self, dt)
     -- Kinematic movement
-    self.pos_current = self.pos_current + self.steering * self.speed * self.dash * dt
+    local dir = self.steering * self.speed * self.dash * dt
+    self.pos_current = self.pos_current + dir
+    self.pos_mouse = self.pos_mouse + dir
     go.set_position(self.pos_current)
 
     -- Reset steering to stop moving after mouse release
