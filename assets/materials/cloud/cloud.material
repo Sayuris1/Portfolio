@@ -1,5 +1,5 @@
 name: "cloud"
-tags: "tile"
+tags: "cloud"
 vertex_program: "/assets/materials/cloud/cloud.vp"
 fragment_program: "/assets/materials/cloud/cloud.fp"
 vertex_space: VERTEX_SPACE_WORLD

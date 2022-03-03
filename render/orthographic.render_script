@@ -11,12 +11,24 @@ function init(self)
 	self.gui_pred = render.predicate({"gui"})
 	self.text_pred = render.predicate({"text"})
 	self.particle_pred = render.predicate({"particle"})
+    self.blur_pred = render.predicate({"blur"})
+    self.cloud_pred = render.predicate({"cloud"})
 
 	self.clear_color = vmath.vector4(0, 0, 0, 0)
 	self.clear_color.x = sys.get_config("render.clear_color_red", 0)
 	self.clear_color.y = sys.get_config("render.clear_color_green", 0)
 	self.clear_color.z = sys.get_config("render.clear_color_blue", 0)
 	self.clear_color.w = sys.get_config("render.clear_color_alpha", 0)
+
+    local color_params = { format = render.FORMAT_RGBA,
+                           width = render.get_window_width(),
+                           height = render.get_window_height(),
+                           min_filter = render.FILTER_LINEAR,
+                           mag_filter = render.FILTER_LINEAR,
+                           u_wrap = render.WRAP_CLAMP_TO_EDGE,
+                           v_wrap = render.WRAP_CLAMP_TO_EDGE }
+
+    self.blur_target = render.render_target({[render.BUFFER_COLOR_BIT] = color_params})
 end
 
 function update(self)
@@ -33,14 +45,29 @@ function update(self)
 	render.disable_state(render.STATE_DEPTH_TEST)
 	render.disable_state(render.STATE_CULL_FACE)
 	render.disable_state(render.STATE_STENCIL_TEST)
-		
-	local viewport = camera.get_viewport(camera_id)
+
+	local viewport = camera.get_viewport()
 	render.set_viewport(viewport.x, viewport.y, viewport.z, viewport.w)
-	render.set_view(camera.get_view(camera_id))
-	render.set_projection(camera.get_projection(camera_id))
+	render.set_view(camera.get_view())
+	render.set_projection(camera.get_projection())
+    
+    render.set_render_target_size(self.blur_target, viewport.z, viewport.w)
+    render.set_render_target(self.blur_target)
+	render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
 	render.draw(self.tile_pred)
 	render.draw(self.particle_pred)
 	render.draw_debug3d()
+
+    render.set_render_target(render.RENDER_TARGET_DEFAULT)
+    render.draw(self.cloud_pred)
+    render.enable_texture(0, self.blur_target, render.BUFFER_COLOR_BIT)
+	render.set_view(IDENTITY)
+    render.set_projection(vmath.matrix4())
+    render.draw(self.blur_pred)
+    render.disable_texture(0)
+	render.set_view(camera.get_view())
+	render.set_projection(camera.get_projection())
+	render.draw(self.tile_pred)
 	
 	-- draw gui in screen space using an orthographic projection
 	render.disable_state(render.STATE_DEPTH_TEST)
