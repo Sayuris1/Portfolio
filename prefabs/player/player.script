@@ -49,9 +49,9 @@ function update(self, dt)
 
     -- Parallax
     self.pos_camera = go.get_position(self.camera_id)
-    go.set_position(self.pos_camera / 2, "/parallax_3")
-    go.set_position(self.pos_camera / 3, "/parallax_2")
-    go.set_position(self.pos_camera / 6, "/parallax_1")
+    --go.set_position(self.pos_camera / 2, "/parallax_3")
+    --go.set_position(self.pos_camera / 3, "/parallax_2")
+    --go.set_position(self.pos_camera / 6, "/parallax_1")
 
     -- Cloud animate
     local pos = self.pos_camera / 1000

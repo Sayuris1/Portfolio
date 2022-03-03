@@ -4,12 +4,12 @@ uniform lowp sampler2D texture_sampler;
 uniform lowp vec4 tint;
 
 void main() {
-    float pi_2 = 6.28318530718; // pi_2*2
+    const float pi_2 = 6.28318530718; // pi_2*2
     
     // Settings
-    float directions = 16.0; // BLUR DIRECTIONS (Default 16.0 - More is better but slower)
-    float quality = 4.0; // BLUR QUALITY (Default 4.0 - More is better but slower)
-    float size = 5.0; // BLUR SIZE (radius)
+    const float directions = 16.0; // BLUR DIRECTIONS (Default 16.0 - More is better but slower)
+    const float quality = 4.0; // BLUR QUALITY (Default 4.0 - More is better but slower)
+    const float size = 5.0; // BLUR SIZE (radius)
    
     vec2 iResolution = vec2(1280, 720);
 
@@ -22,7 +22,7 @@ void main() {
 			color += texture2D(texture_sampler, var_texcoord0 + vec2(cos(d), sin(d)) * radius * i);		
         }
     }
-    
+
     // Output to screen
     color /= quality * directions - 15.0;
 

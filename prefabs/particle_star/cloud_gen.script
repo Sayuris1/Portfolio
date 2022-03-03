@@ -28,6 +28,6 @@ function init(self)
             tint_a = 0.3
         end
 
-        go.set(sprite_url, "tint.w", tint_a)
+        --go.set(sprite_url, "tint.w", tint_a)
     end
 end
