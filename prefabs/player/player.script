@@ -41,9 +41,6 @@ function update(self, dt)
     self.pos_mouse = self.pos_mouse + dir
     go.set_position(self.pos_current)
 
-    -- Reset steering to stop moving after mouse release
-    self.steering.x = 0; self.steering.y = 0
-
     -- Rotate to mouse
     local rotate_angle = math.atan2(self.pos_mouse.x - self.pos_current.x, self.pos_mouse.y - self.pos_current.y)
     go.set_rotation(vmath.quat_rotation_z(-rotate_angle))
@@ -54,12 +51,12 @@ function update(self, dt)
     go.set_position(self.pos_camera / 3, "/parallax_2")
     go.set_position(self.pos_camera / 6, "/parallax_1")
 
-    -- Cloud
-    go.set_position(self.pos_camera, "/cloud")
-    --go.set_position(self.pos_camera + vmath.vector3(10, 370, 0), "/blur")
-
+    -- Cloud animate
     local pos = self.pos_camera / 1000
     go.set("/cloud#quat", "u_in", vmath.vector4(pos.x, pos.y, 0, 0))
+
+    -- Reset steering to stop moving after mouse release
+    self.steering.x = 0; self.steering.y = 0
 end
 
 function on_message(self, message_id, message, sender)
