@@ -1,0 +1,31 @@
+uniform highp mat4 view_proj;
+
+uniform mediump vec4 u_points;
+// (.x, .y) initial point
+// (.z, .w) final point
+
+
+uniform mediump vec4 u_size;
+// (.x, .y) normal
+// (.z) size
+
+// positions are in world space
+attribute highp vec4 position;
+attribute mediump vec2 texcoord0;
+
+varying mediump vec2 var_texcoord0;
+
+void main() {
+    var_texcoord0 = texcoord0;
+
+    vec2 line_pos = vec2(0.0);
+    if (position.x < 0.0)
+        line_pos += u_points.xy;
+    else
+        line_pos += u_points.zw;
+
+    if (position.y < 0.0)
+        line_pos.xy += u_size.xy * u_size.z;
+
+    gl_Position = view_proj * vec4(line_pos, position.z, 1.0);
+}
