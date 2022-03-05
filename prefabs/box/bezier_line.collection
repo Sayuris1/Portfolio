@@ -1,100 +1,31 @@
-name: "main"
-instances {
-  id: "camera"
-  prototype: "/orthographic/camera.go"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  component_properties {
-    id: "script"
-    properties {
-      id: "near_z"
-      value: "-10.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "far_z"
-      value: "10.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "follow"
-      value: "true"
-      type: PROPERTY_TYPE_BOOLEAN
-    }
-    properties {
-      id: "follow_target"
-      value: "/player"
-      type: PROPERTY_TYPE_HASH
-    }
-    properties {
-      id: "follow_lerp"
-      value: "0.02"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "player"
-  prototype: "/prefabs/player/player.go"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 5.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 0.05
-    y: 0.05
-    z: 0.05
-  }
-}
-collection_instances {
-  id: "bezier_box"
-  collection: "/prefabs/box/bezier_box.collection"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
+name: "default"
 scale_along_z: 0
 embedded_instances {
-  id: "cloud"
-  data: "embedded_components {\n"
-  "  id: \"quad\"\n"
+  id: "line"
+  children: "pos_1"
+  children: "pos_2"
+  children: "pos_3"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/prefabs/box/bezier_box.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model\"\n"
   "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/builtins/assets/meshes/quad_2x2.dae\\\"\\n"
-  "material: \\\"/assets/materials/cloud/cloud.material\\\"\\n"
+  "  data: \"mesh: \\\"/bezier/assets/models/strip_64X01Y.dae\\\"\\n"
+  "material: \\\"/bezier/assets/materials/bezier.material\\\"\\n"
+  "textures: \\\"/bezier/assets/images/bezier_line.png\\\"\\n"
   "skeleton: \\\"\\\"\\n"
   "animations: \\\"\\\"\\n"
   "default_animation: \\\"\\\"\\n"
@@ -131,49 +62,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "blur"
-  data: "embedded_components {\n"
-  "  id: \"quad\"\n"
-  "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/builtins/assets/meshes/quad_2x2.dae\\\"\\n"
-  "material: \\\"/assets/materials/blur/blur.material\\\"\\n"
-  "skeleton: \\\"\\\"\\n"
-  "animations: \\\"\\\"\\n"
-  "default_animation: \\\"\\\"\\n"
-  "name: \\\"unnamed\\\"\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "go"
+  id: "pos_1"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
@@ -182,7 +71,7 @@ embedded_instances {
   "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
-  "group: \\\"line\\\"\\n"
+  "group: \\\"1\\\"\\n"
   "mask: \\\"player\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
@@ -224,7 +113,7 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 100.0
+    x: 0.0
     y: 0.0
     z: 0.0
   }
@@ -241,7 +130,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go1"
+  id: "pos_2"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
@@ -250,7 +139,7 @@ embedded_instances {
   "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
-  "group: \\\"line\\\"\\n"
+  "group: \\\"2\\\"\\n"
   "mask: \\\"player\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
@@ -292,8 +181,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 100.0
-    y: -20.0
+    x: 0.0
+    y: 0.0
     z: 0.0
   }
   rotation {
@@ -309,7 +198,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go2"
+  id: "pos_3"
   data: "embedded_components {\n"
   "  id: \"collisionobject\"\n"
   "  type: \"collisionobject\"\n"
@@ -318,7 +207,7 @@ embedded_instances {
   "mass: 0.0\\n"
   "friction: 0.1\\n"
   "restitution: 0.5\\n"
-  "group: \\\"line\\\"\\n"
+  "group: \\\"3\\\"\\n"
   "mask: \\\"player\\\"\\n"
   "embedded_collision_shape {\\n"
   "  shapes {\\n"
@@ -360,8 +249,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 100.0
-    y: 20.0
+    x: 0.0
+    y: 0.0
     z: 0.0
   }
   rotation {

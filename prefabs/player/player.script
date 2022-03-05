@@ -26,8 +26,6 @@ function init(self)
 
     -- Rotate
     self.pos_mouse = vmath.vector3(0)
-
-    self.middle = vmath.vector3(-150, 20, 0)
 end
 
 function final(self)
@@ -65,15 +63,27 @@ function on_message(self, message_id, message, sender)
         collision.fragment = "collisionobject"
         msg.post(collision, "disable")
 
-        local other_id = message.other_id
         local duration = 0.2
-        local pos_particle = go.get_position(other_id)
+        local pos_particle = go.get_position(message.other_id)
         local to = pos_particle + self.steering * self.current_speed
         to.z = pos_particle.z
 
-        go.animate(other_id, "position", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
-            msg.post(collision, "enable")
-        end)
+        local url = msg.url(go.get_parent(message.other_id))
+        url.fragment = "script"
+
+        if message.group == hash(1) then
+            go.animate(url, "pos_1", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
+                msg.post(collision, "enable")
+            end)
+        elseif message.group == hash(2) then
+            go.animate(url, "pos_2", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
+                msg.post(collision, "enable")
+            end)
+        elseif message.group == hash(3) then
+            go.animate(url, "pos_3", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
+                msg.post(collision, "enable")
+            end)
+        end
     end
 end
 
