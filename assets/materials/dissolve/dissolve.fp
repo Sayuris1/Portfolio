@@ -52,7 +52,7 @@ void main()
     vec2 uv = (gl_FragCoord.xy - 0.5 * res) / res.y;
 
     vec3 cloud_color = vec3(0.2, 0.1, 0.5);
-    float alpha = smoothstep(u_time.x, 1.0, fbm(var_texcoord0 * 10));
+    float alpha = smoothstep(u_time.x - 0.8, 1.0, fbm(var_texcoord0 * 10));
 
     // Pre-multiply alpha since all runtime textures already are
     lowp vec4 tint_pm = vec4(tint.xyz * alpha, alpha);

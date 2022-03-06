@@ -26,5 +26,5 @@ void main() {
     // Output to screen
     color /= quality * directions - 15.0;
 
-    gl_FragColor = color;
+    gl_FragColor = color * 1.2;
 }

@@ -45,26 +45,46 @@ function update(self, dt)
     self.pos_current = self.pos_current + dir
     self.pos_mouse = self.pos_mouse + dir
 
-    go.set_position(self.pos_current)
-
     -- Set trail color
     if vmath.length_sqr(dir) > 400 then
         go.animate("/player_trail#trail_model", "u_color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(1, 0, 0, 1), go.EASING_OUTEXPO, 0.5)
         if self.dash then
             self.dash = false
-            go.animate("/sprite", "scale", go.PLAYBACK_ONCE_PINGPONG, vmath.vector3(0.5, 2, 1), go.EASING_LINEAR, 0.3, 0, function ()
+
+            -- Shockwave
+            self.time = 0
+            local shock_timer = timer.delay(0.0, true, function (self, delay)
+                local pos = camera.world_to_screen(nil, self.pos_current)
+                self.time = self.time + 0.01
+                go.set("/shockwave#quad", "u_in", vmath.vector4(pos.x, pos.y, self.time, 0))
+            end)
+           
+            -- Ship animate
+            go.animate("/sprite", "scale", go.PLAYBACK_ONCE_PINGPONG, vmath.vector3(0), go.EASING_LINEAR, 0.1, 0, function ()
+                go.animate("/sprite", "scale", go.PLAYBACK_ONCE_PINGPONG, vmath.vector3(0.5, 2, 1), go.EASING_LINEAR, 0.3, 0, function ()
+                end)
+            end)
+            
+            -- Ghost animate
+            local dash = factory.create("#dash")
+            local url = msg.url(dash); url.fragment = "sprite"
+            go.animate(dash, "position", go.PLAYBACK_ONCE_FORWARD, self.pos_current, go.EASING_LINEAR, 1.8)
+            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.7, 0.0, function() 
+                go.delete(dash)
+                -- Stop shockwave
+                go.set("/shockwave#quad", "u_in", vmath.vector4(0, 0, 0, 0))
+                timer.cancel(shock_timer)
+                -- Can dash again
                 self.dash = true
             end)
 
-            local dash = factory.create("#dash")
-            local url = msg.url(dash); url.fragment = "sprite"
-            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_LINEAR, 2, 0.2, function() 
-                go.delete(dash)
-            end)
+           
         end
     else
         go.animate("/player_trail#trail_model", "u_color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(0, 0, 1, 1), go.EASING_OUTEXPO, 1.5)
     end
+
+    go.set_position(self.pos_current)
 
     -- Rotate to mouse
     local rotate_angle = math.atan2(follow_dist.x, follow_dist.y)
@@ -73,9 +93,8 @@ function update(self, dt)
     
     -- Cloud animate
     self.pos_camera = go.get_position(self.camera_id)
-    self.time = (self.time + dt) % 5
     local pos = self.pos_camera / 1000
-    go.set("/cloud#quad", "u_in", vmath.vector4(pos.x, pos.y, self.time, 0))
+    go.set("/cloud#quad", "u_in", vmath.vector4(pos.x, pos.y, 0, 0))
 
     -- Trail
     -- Need to reset child go quat. Trail rotates itself in the shader

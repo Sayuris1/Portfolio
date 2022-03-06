@@ -1,7 +1,7 @@
-name: "dissolve"
-tags: "tile"
-vertex_program: "/assets/materials/dissolve/dissolve.vp"
-fragment_program: "/assets/materials/dissolve/dissolve.fp"
+name: "shockwave2"
+tags: "shock"
+vertex_program: "/assets/materials/shockwave2/shockwave2.vp"
+fragment_program: "/assets/materials/shockwave2/shockwave2.fp"
 vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {
   name: "view_proj"
@@ -18,7 +18,7 @@ fragment_constants {
   }
 }
 fragment_constants {
-  name: "u_time"
+  name: "u_in"
   type: CONSTANT_TYPE_USER
   value {
     x: 0.0

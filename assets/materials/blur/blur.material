@@ -1,4 +1,4 @@
-name: "sprite"
+name: "blur"
 tags: "blur"
 vertex_program: "/assets/materials/blur/blur.vp"
 fragment_program: "/assets/materials/blur/blur.fp"
