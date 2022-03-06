@@ -19,12 +19,12 @@ components {
   }
   properties {
     id: "trail_width"
-    value: "200.0"
+    value: "80.0"
     type: PROPERTY_TYPE_NUMBER
   }
   properties {
-    id: "fade_tail_alpha"
-    value: "5.0"
+    id: "points_count"
+    value: "64.0"
     type: PROPERTY_TYPE_NUMBER
   }
   properties {
@@ -36,7 +36,7 @@ components {
 embedded_components {
   id: "trail_model"
   type: "model"
-  data: "mesh: \"/hyper_trails/models/trail_16.dae\"\n"
+  data: "mesh: \"/hyper_trails/models/trail_64.dae\"\n"
   "material: \"/assets/materials/trail/trail.material\"\n"
   "textures: \"/hyper_trails/textures/data/texture0_1.png\"\n"
   "textures: \"/assets/imgs/trail.png\"\n"
