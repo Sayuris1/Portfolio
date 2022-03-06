@@ -30,7 +30,7 @@ float noise (vec2 st) {
             (d - b) * u.x * u.y;
 }
 
-float fbm (vec2 st, vec2 pos, float dots) {
+float fbm (vec2 st, vec2 pos) {
     // Initial values
     float value = 0.0;
     float amplitude = .5;
@@ -38,7 +38,7 @@ float fbm (vec2 st, vec2 pos, float dots) {
     // Loop of octaves
     for (int i = 0; i < 3; i++) {
         value += amplitude * noise(st + pos);
-        st *= dots;
+        st *= 2.0;
         amplitude *= .5;
     }
     return value;
@@ -112,7 +112,7 @@ void main() {
 
     // Cloud effect
     vec3 cloud_color = vec3(0.2, 0.1, 0.5);
-    color += smoothstep(0.6, 0.7, fbm(uv * 2.0, pos, 2.0)) * cloud_color * 0.5;
+    color += smoothstep(0.6, 0.7, fbm(uv * 2.0, pos)) * cloud_color * 0.5;
     
     // Stars
     uv *= 10.0; // Zoom out, more repeat

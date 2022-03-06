@@ -47,14 +47,18 @@ function update(self, dt)
 
     -- Rotate to mouse
     local rotate_angle = math.atan2(follow_dist.x, follow_dist.y)
-    go.set_rotation(vmath.quat_rotation_z(-rotate_angle))
-
-
+    local rotate_quat = vmath.quat_rotation_z(-rotate_angle)
+    go.set_rotation(rotate_quat)
+    
     -- Cloud animate
     self.pos_camera = go.get_position(self.camera_id)
     self.time = (self.time + dt) % 5
     local pos = self.pos_camera / 1000
     go.set("/cloud#quad", "u_in", vmath.vector4(pos.x, pos.y, self.time, 0))
+
+    -- Trail
+    -- Need to reset child go quat. Trail rotates itself in the shader
+    go.set_rotation(vmath.quat_rotation_z(rotate_angle), "/player_trail")
 end
 
 function on_message(self, message_id, message, sender)
@@ -65,7 +69,7 @@ function on_message(self, message_id, message, sender)
 
         local duration = 0.2
         local pos_particle = go.get_position(message.other_id)
-        local to = pos_particle + self.steering * self.current_speed
+        local to = pos_particle + self.steering * math.min(self.current_speed * 3, 100)
         to.z = pos_particle.z
 
         local url = msg.url(go.get_parent(message.other_id))
