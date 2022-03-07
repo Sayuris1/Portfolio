@@ -46,15 +46,15 @@ function update(self, dt)
     self.pos_mouse = self.pos_mouse + dir
 
     -- Set trail color
-    if vmath.length_sqr(dir) > 400 then
+    if vmath.length_sqr(dir) > 200 then
         go.animate("/player_trail#trail_model", "u_color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(1, 0, 0, 1), go.EASING_OUTEXPO, 0.5)
         if self.dash then
             self.dash = false
 
             -- Shockwave
             self.time = 0
+            local pos = camera.world_to_screen(nil, self.pos_current)
             local shock_timer = timer.delay(0.0, true, function (self, delay)
-                local pos = camera.world_to_screen(nil, self.pos_current)
                 self.time = self.time + 0.01
                 go.set("/shockwave#quad", "u_in", vmath.vector4(pos.x, pos.y, self.time, 0))
             end)
@@ -78,7 +78,10 @@ function update(self, dt)
                 self.dash = true
             end)
 
-           
+            local dash_fx = factory.create("#dash_fx", go.get_position(), go.get_rotation(), nil, vmath.vector3(0))
+            local url = msg.url(dash_fx); url.fragment = "sprite"
+            go.animate(dash_fx, "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(0.3), go.EASING_OUTBACK, 0.5)
+            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.5)
         end
     else
         go.animate("/player_trail#trail_model", "u_color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(0, 0, 1, 1), go.EASING_OUTEXPO, 1.5)

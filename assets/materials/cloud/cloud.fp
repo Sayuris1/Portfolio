@@ -106,13 +106,13 @@ void main() {
     // Background color
     vec3 from = vec3(0.05, 0.05, 0.22) * 0.5;
     vec3 to = vec3(0.00, 0.00, 0.00);
-    vec3 weight = vec3(uv.y, uv.y, uv.y) * 2.0;
+    vec3 weight = vec3(uv.y, uv.y, uv.y);
     
-    vec3 color = mix(from, to, weight) * 0.2;
+    vec3 color = mix(from, to, weight) * 0.4;
 
     // Cloud effect
     vec3 cloud_color = vec3(0.2, 0.1, 0.5);
-    color += smoothstep(0.6, 0.7, fbm(uv * 2.0, pos)) * cloud_color * 0.5;
+    color += smoothstep(0.6, 0.7, fbm(uv * 2.0, pos)) * cloud_color * 0.7;
     
     // Stars
     uv *= 10.0; // Zoom out, more repeat
