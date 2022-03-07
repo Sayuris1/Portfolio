@@ -8,7 +8,7 @@ void main() {
     
     // Settings
     const float directions = 16.0; // BLUR DIRECTIONS (Default 16.0 - More is better but slower)
-    const float quality = 4.0; // BLUR QUALITY (Default 4.0 - More is better but slower)
+    const float quality = 10.0; // BLUR QUALITY (Default 4.0 - More is better but slower)
     const float size = 5.0; // BLUR SIZE (radius)
    
     vec2 iResolution = vec2(1280, 720);
@@ -26,5 +26,5 @@ void main() {
     // Output to screen
     color /= quality * directions - 15.0;
 
-    gl_FragColor = color * 1.2;
+    gl_FragColor = color * 2.0;
 }

@@ -49,28 +49,6 @@ float fbm (vec2 st, vec2 pos) {
 
 void main()
 {
-    /* vec2 res = vec2(1280.0, 720.0);
-    //vec2 uv = ((gl_FragCoord.xy - 0.5 * res) / res.y) + u_pos.xy;
-    vec2 uv = var_texcoord0 * 2.0 - 1.0;
-
-    vec4 color = vec4(0.0);
-    vec4 border = vec4(abs(uv.x));
-    border.rgb *= vec3(0.0, 0.0, 1.0);
-    color += border; */
-
-    /* vec2 grid_uv = fract(var_pos.xy * 0.6) - 0.5;
-    vec2 grid_id = floor(var_pos.xy * 0.6);
-    float r = noise(grid_id);
-    if (color.a < 0.7){
-        if (r < 0.5)
-            color += vec4(0.0, 1.0, 1.0, 1.0);
-    }
-    if (r < 0.3)
-        color = vec4(0.0); */
-
-    //color.rgb += vec3(0.0, 1.0, 1.0) * noise(uv + u_pos.xy);
-    //color -= noise(uv + u_pos.xy * 25.0);
-    
     // Pre-multiply alpha since all runtime textures already are
     lowp vec4 tint_pm = vec4(var_tint.xyz * var_tint.w, var_tint.w);
     gl_FragColor = texture2D(texture1, var_texcoord0.xy) * tint_pm * u_color;

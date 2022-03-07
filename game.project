@@ -17,10 +17,10 @@ dependencies#0 = https://github.com/britzl/defold-orthographic/archive/refs/tags
 dependencies#1 = https://github.com/Sayuris1/bezier-curve/archive/master.zip
 dependencies#2 = https://github.com/indiesoftby/defold-hyper-trails/archive/refs/tags/1.2.0.zip
 
-[physics]
-trigger_overlap_capacity = 10000
-max_collisions = 10000
-
 [sprite]
 max_count = 10000
+
+[physics]
+gravity_y = 0.0
+scale = 0.01
 

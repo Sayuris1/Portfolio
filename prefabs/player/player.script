@@ -4,6 +4,7 @@ local TOUCH = hash("touch")
 local DASH = hash("dash")
 
 local TRIGGER = hash("trigger_response")
+local COLLISION = hash("contact_point_response")
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -102,6 +103,8 @@ function update(self, dt)
     -- Trail
     -- Need to reset child go quat. Trail rotates itself in the shader
     go.set_rotation(vmath.quat_rotation_z(rotate_angle), "/player_trail")
+
+    --msg.post("/A#collisionobject", "apply_force", {force = vmath.vector3(1000, 0, 0) , position = vmath.vector3(0)})
 end
 
 function on_message(self, message_id, message, sender)
@@ -131,6 +134,13 @@ function on_message(self, message_id, message, sender)
                 msg.post(collision, "enable")
             end)
         end
+
+    elseif message_id == COLLISION then
+        local url = msg.url(message.other_id)
+        url.fragment = "collisionobject"
+
+        local force = self.current_speed * -message.normal * 300
+        msg.post(url, "apply_force", {force = force , position = message.position})
     end
 end
 
