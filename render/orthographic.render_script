@@ -8,6 +8,7 @@ local IDENTITY = vmath.matrix4()
 
 function init(self)
 	self.tile_pred = render.predicate({"tile"})
+	self.tile_2_pred = render.predicate({"tile_2"})
 	self.gui_pred = render.predicate({"gui"})
 	self.text_pred = render.predicate({"text"})
 	self.particle_pred = render.predicate({"particle"})
@@ -58,6 +59,7 @@ function update(self)
 
 	render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
 	render.draw(self.tile_pred)
+	render.draw(self.tile_2_pred)
 	render.draw(self.particle_pred)
 	render.draw_debug3d()
 
@@ -75,6 +77,15 @@ function update(self)
     render.enable_texture(0, self.blur_target, render.BUFFER_COLOR_BIT)
     render.draw(self.blur_pred)
     render.disable_texture(0)
+
+    -- Draw normal
+	render.set_view(camera.get_view())
+	render.set_projection(camera.get_projection())
+	render.draw(self.tile_2_pred)
+
+    -- Change quat to screen space
+	render.set_view(IDENTITY)
+    render.set_projection(vmath.matrix4())
    
     render.set_render_target(render.RENDER_TARGET_DEFAULT)
     render.enable_texture(0, self.shock_target, render.BUFFER_COLOR_BIT)

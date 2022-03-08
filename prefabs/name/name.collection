@@ -802,7 +802,7 @@ embedded_instances {
   "  data: 7.5\\n"
   "  data: 10.0\\n"
   "}\\n"
-  "linear_damping: 0.8\\n"
+  "linear_damping: 0.6\\n"
   "angular_damping: 0.2\\n"
   "locked_rotation: false\\n"
   "bullet: false\\n"

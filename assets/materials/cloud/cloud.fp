@@ -108,7 +108,7 @@ void main() {
     vec3 to = vec3(0.00, 0.00, 0.00);
     vec3 weight = vec3(uv.y, uv.y, uv.y);
     
-    vec3 color = mix(from, to, weight) * 0.0;
+    vec3 color = mix(from, to, weight) * 0.5;
 
     // Cloud effect
     vec3 cloud_color = vec3(0.2, 0.1, 0.5);

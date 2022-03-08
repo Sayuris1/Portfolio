@@ -29,6 +29,8 @@ function init(self)
 
     -- Rotate
     self.pos_mouse = vmath.vector3(0)
+
+    self.profiler = false
 end
 
 function final(self)
@@ -73,7 +75,7 @@ function update(self, dt)
             go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.7, 0.0, function() 
                 go.delete(dash)
                 -- Stop shockwave
-                go.set("/shockwave#quad", "u_in", vmath.vector4(0, 0, 0, 0))
+                go.set("/shockwave#quad", "u_in", vmath.vector4(-100, -100, 0.1, 0))
                 timer.cancel(shock_timer)
                 -- Can dash again
                 self.dash = true
@@ -103,8 +105,6 @@ function update(self, dt)
     -- Trail
     -- Need to reset child go quat. Trail rotates itself in the shader
     go.set_rotation(vmath.quat_rotation_z(rotate_angle), "/player_trail")
-
-    --msg.post("/A#collisionobject", "apply_force", {force = vmath.vector3(1000, 0, 0) , position = vmath.vector3(0)})
 end
 
 function on_message(self, message_id, message, sender)
@@ -160,6 +160,10 @@ function on_input(self, action_id, action)
             -- Reset steering to stop moving after mouse release
             self.steering.x = 0; self.steering.y = 0
         end
+
+    elseif action_id == hash("profiler") and action.pressed then
+        self.profiler = not self.profiler
+        profiler.enable_ui(self.profiler)
 
     -- Mouse movement have action_id == nil
     else
