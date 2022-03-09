@@ -48,10 +48,7 @@ float fbm (vec2 st) {
 
 void main()
 {
-    vec2 res = vec2(1280.0, 720.0);
-    vec2 uv = (gl_FragCoord.xy - 0.5 * res) / res.y;
-
-    vec3 cloud_color = vec3(0.2, 0.1, 0.5);
+    // Use fbm to decrease tint.alpha
     float alpha = smoothstep(u_time.x - 0.8, 1.0, fbm(var_texcoord0 * 10.0));
 
     // Pre-multiply alpha since all runtime textures already are

@@ -9,11 +9,8 @@ void main() {
     // Settings
     const float directions = 16.0; // BLUR DIRECTIONS (Default 16.0 - More is better but slower)
     const float quality = 10.0; // BLUR QUALITY (Default 4.0 - More is better but slower)
-    const float size = 5.0; // BLUR SIZE (radius)
+    const vec2 radius = vec2(5.0) / vec2(1280, 720); // BLUR SIZE (radius)
    
-    vec2 iResolution = vec2(1280, 720);
-
-    vec2 radius = size/iResolution.xy;
     vec4 color = texture2D(texture_sampler, var_texcoord0);
     
     // Blur calculations

@@ -15,8 +15,8 @@ void main()
 {
     // x --> Distortion
     // y --> Size, z --> Circle
-    vec3 WaveParams = vec3(10.0, 0.8, 0.1);
-    vec2 res = vec2(1280.0, 720.0);
+    const vec3 WaveParams = vec3(10.0, 0.8, 0.1);
+    const vec2 res = vec2(1280.0, 720.0);
 
     //Sawtooth wave
     float offset = (u_in.z - floor(u_in.z)) / u_in.z;

@@ -98,20 +98,20 @@ vec3 star_layer(vec2 uv, float parallax){
 }
 
 void main() {
-    vec2 res = vec2(1280.0, 720.0);
+    const vec2 res = vec2(1280.0, 720.0);
     vec2 uv = (gl_FragCoord.xy - 0.5 * res) / res.y;
     uv *= 2.0;
     vec2 pos = vec2(u_in.x, u_in.y);
 
     // Background color
-    vec3 from = vec3(0.05, 0.05, 0.22) * 0.5;
-    vec3 to = vec3(0.00, 0.00, 0.00);
+    const vec3 from = vec3(0.05, 0.05, 0.22) * 0.5;
+    const vec3 to = vec3(0.00, 0.00, 0.00);
     vec3 weight = vec3(uv.y, uv.y, uv.y);
     
     vec3 color = mix(from, to, weight) * 0.5;
 
     // Cloud effect
-    vec3 cloud_color = vec3(0.2, 0.1, 0.5);
+    const vec3 cloud_color = vec3(0.2, 0.1, 0.5);
     color += smoothstep(0.6, 0.7, fbm(uv * 2.0, pos)) * cloud_color * 1.2;
     
     // Stars
