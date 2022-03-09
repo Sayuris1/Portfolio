@@ -1,6 +1,6 @@
 name: "hyper_trails_trail"
 tags: "tile"
-vertex_program: "/assets/materials/trail/trail.vp"
+vertex_program: "/hyper_trails/materials/trail.vp"
 fragment_program: "/assets/materials/trail/trail.fp"
 vertex_space: VERTEX_SPACE_LOCAL
 vertex_constants {

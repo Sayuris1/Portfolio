@@ -1,7 +1,7 @@
-name: "cloud"
-tags: "cloud"
-vertex_program: "/assets/materials/cloud/cloud.vp"
-fragment_program: "/assets/materials/cloud/cloud.fp"
+name: "star"
+tags: "star"
+vertex_program: "/builtins/materials/sprite.vp"
+fragment_program: "/assets/materials/star/star.fp"
 vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {
   name: "view_proj"

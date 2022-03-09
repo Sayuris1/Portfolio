@@ -1,0 +1,30 @@
+function init(self)
+	-- Parallax variables
+    self.camera_id = go.get_id("/camera")
+    self.pos_camera = go.get_position(self.camera_id)    
+end
+
+function update(self, dt)
+	-- Set cloud shader constants
+    self.pos_camera = go.get_position(self.camera_id)
+    local pos = self.pos_camera / 1000
+    go.set("#quad", "u_in", vmath.vector4(pos.x, pos.y, 0, 0))
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--    msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+end

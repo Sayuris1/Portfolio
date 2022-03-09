@@ -1,6 +1,6 @@
 name: "dissolve"
 tags: "tile"
-vertex_program: "/assets/materials/dissolve/dissolve.vp"
+vertex_program: "/builtins/materials/sprite.vp"
 fragment_program: "/assets/materials/dissolve/dissolve.fp"
 vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {

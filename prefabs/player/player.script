@@ -1,7 +1,6 @@
 local camera = require "orthographic.camera"
 
 local TOUCH = hash("touch")
-local DASH = hash("dash")
 
 local TRIGGER = hash("trigger_response")
 local COLLISION = hash("contact_point_response")
@@ -13,11 +12,6 @@ function init(self)
     go.property("max_speed", 50)
 
     -- Cloud variables
-    self.time = 0
-
-    -- Parallax variables
-    self.camera_id = go.get_id("/camera")
-    self.pos_camera = go.get_position(self.camera_id)    
     self.time = 0
 
     -- Movement variables
@@ -33,24 +27,27 @@ function init(self)
     self.profiler = false
 end
 
-function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
 function update(self, dt)
     -- Kinematic movement
+    -- Slow down when close to the mouse pos
     local follow_dist = self.pos_mouse - self.pos_current
-    self.current_speed = self.speed * dt * vmath.length_sqr(follow_dist)
+    self.current_speed = self.speed * vmath.length_sqr(follow_dist) * dt 
 
     local dir = self.steering * self.current_speed
     self.pos_current = self.pos_current + dir
+
+    -- We update pos_mouse only if mouse moves
+    -- Need to update it again when ship moves
     self.pos_mouse = self.pos_mouse + dir
 
-    -- Set trail color
+    go.set_position(self.pos_current)
+   
+    -- When going fast
     if vmath.length_sqr(dir) > 200 then
+        -- Animate trail color to red
         go.animate("/player_trail#trail_model", "u_color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(1, 0, 0, 1), go.EASING_OUTEXPO, 0.5)
+        -- Play dash animation
+        -- If it's not playing
         if self.dash then
             self.dash = false
 
@@ -58,6 +55,7 @@ function update(self, dt)
             self.time = 0
             local pos = camera.world_to_screen(nil, self.pos_current)
             local shock_timer = timer.delay(0.0, true, function (self, delay)
+                -- Set shader constant
                 self.time = self.time + 0.01
                 go.set("/shockwave#quad", "u_in", vmath.vector4(pos.x, pos.y, self.time, 0))
             end)
@@ -68,42 +66,46 @@ function update(self, dt)
                 end)
             end)
             
-            -- Ghost animate
             local dash = factory.create("#dash")
             local url = msg.url(dash); url.fragment = "sprite"
+            -- Ghost animate
             go.animate(dash, "position", go.PLAYBACK_ONCE_FORWARD, self.pos_current, go.EASING_LINEAR, 1.8)
+
+            -- Set dissolve shader constant
+            -- We can use go.animate
             go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.5, 0.0, function() 
                 go.delete(dash)
+
                 -- Stop shockwave
-                go.set("/shockwave#quad", "u_in", vmath.vector4(0, -100000, 0, 0))
                 timer.cancel(shock_timer)
+                go.set("/shockwave#quad", "u_in", vmath.vector4(0, -100000, 0, 0))
+
                 -- Can dash again
                 self.dash = true
             end)
 
+            -- Dash_fx animate
             local dash_fx = factory.create("#dash_fx", go.get_position(), go.get_rotation(), nil, vmath.vector3(0))
             local url = msg.url(dash_fx); url.fragment = "sprite"
             go.animate(dash_fx, "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(0.3), go.EASING_OUTBACK, 0.5)
+
+            -- Set dissolve shader constant
             go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.5)
         end
+
+    -- When going slow
+    -- Animate trail color to blue
     else
         go.animate("/player_trail#trail_model", "u_color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(0, 0, 1, 1), go.EASING_OUTEXPO, 1.5)
     end
-
-    go.set_position(self.pos_current)
 
     -- Rotate to mouse
     local rotate_angle = math.atan2(follow_dist.x, follow_dist.y)
     local rotate_quat = vmath.quat_rotation_z(-rotate_angle)
     go.set_rotation(rotate_quat)
     
-    -- Cloud animate
-    self.pos_camera = go.get_position(self.camera_id)
-    local pos = self.pos_camera / 1000
-    go.set("/cloud#quad", "u_in", vmath.vector4(pos.x, pos.y, 0, 0))
-
     -- Trail
-    -- Need to reset child go quat. Trail rotates itself in the shader
+    -- Need to reset child rotation. Trail rotates itself in the shader
     go.set_rotation(vmath.quat_rotation_z(rotate_angle), "/player_trail")
 end
 
@@ -136,6 +138,9 @@ function on_message(self, message_id, message, sender)
         end
 
     elseif message_id == COLLISION then
+        -- Ship is kinematic
+        -- We need to apply force to dinamic objects
+
         local url = msg.url(message.other_id)
         url.fragment = "collisionobject"
 
@@ -146,18 +151,15 @@ end
 
 function on_input(self, action_id, action)
 	if action_id == TOUCH then
-        local world = camera.screen_to_world(nil, vmath.vector3(action.x, action.y, 0))
-        self.pos_mouse = world
+        -- Get mouse pos to slow down when close
+        self.pos_mouse = camera.screen_to_world(nil, vmath.vector3(action.x, action.y, 0))
 
-        local distance = world - self.pos_current
-        distance.z = 0
+        -- Get move direction
+        local distance = self.pos_mouse - self.pos_current; distance.z = 0
+        self.steering = vmath.normalize(distance)
 
-        if vmath.length_sqr(distance) > 500 then
-            self.steering = vmath.normalize(distance)
-        end
-
+        -- Reset steering to stop moving after mouse release
         if action.released then
-            -- Reset steering to stop moving after mouse release
             self.steering.x = 0; self.steering.y = 0
         end
 
@@ -169,10 +171,4 @@ function on_input(self, action_id, action)
     else
         self.pos_mouse = camera.screen_to_world(nil, vmath.vector3(action.x, action.y, 0))
     end
-end
-
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
 end

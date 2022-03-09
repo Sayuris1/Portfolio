@@ -1,6 +1,6 @@
 name: "shockwave"
 tags: "shock"
-vertex_program: "/assets/materials/shockwave/shockwave.vp"
+vertex_program: "/builtins/materials/sprite.vp"
 fragment_program: "/assets/materials/shockwave/shockwave.fp"
 vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {

@@ -1,7 +1,7 @@
 name: "line"
 tags: "tile"
 vertex_program: "/assets/materials/line/line.vp"
-fragment_program: "/assets/materials/line/line.fp"
+fragment_program: "/builtins/materials/sprite.fp"
 vertex_space: VERTEX_SPACE_LOCAL
 vertex_constants {
   name: "view_proj"
