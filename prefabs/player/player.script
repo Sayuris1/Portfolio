@@ -6,8 +6,6 @@ local TRIGGER = hash("trigger_response")
 local COLLISION = hash("contact_point_response")
 
 function init(self)
-	msg.post(".", "acquire_input_focus")
-
     go.property("speed", 0.01)
     go.property("max_speed", 50)
 
@@ -22,12 +20,13 @@ function init(self)
     self.dash = true
 
     -- Rotate
-    self.pos_mouse = vmath.vector3(0)
+    self.pos_mouse = vmath.vector3(2370, -10, 0)
 
     self.profiler = false
 end
 
 function update(self, dt)
+    self.pos_current = go.get_position()
     -- Kinematic movement
     -- Slow down when close to the mouse pos
     local follow_dist = self.pos_mouse - self.pos_current
@@ -52,17 +51,20 @@ function update(self, dt)
             self.dash = false
 
             -- Shockwave
-            self.time = 0
-            local pos = camera.world_to_screen(nil, self.pos_current)
-            local shock_timer = timer.delay(0.0, true, function (self, delay)
-                -- Set shader constant
-                self.time = self.time + 0.01
-                go.set("/shockwave#quad", "u_in", vmath.vector4(pos.x, pos.y, self.time, 0))
-            end)
+            local shock_timer
+            if is_shock then
+                self.time = 0
+                local pos = camera.world_to_screen(nil, self.pos_current)
+                shock_timer = timer.delay(0.0, true, function (self, delay)
+                    -- Set shader constant
+                    self.time = self.time + 0.01
+                    go.set("/shockwave#quad", "u_in", vmath.vector4(pos.x, pos.y, self.time, 0))
+                end)
+            end
            
             -- Ship animate
-            go.animate("/sprite", "scale", go.PLAYBACK_ONCE_PINGPONG, vmath.vector3(0), go.EASING_LINEAR, 0.1, 0, function ()
-                go.animate("/sprite", "scale", go.PLAYBACK_ONCE_PINGPONG, vmath.vector3(0.5, 2, 1), go.EASING_LINEAR, 0.3, 0, function ()
+            go.animate("/player_sprite", "scale", go.PLAYBACK_ONCE_PINGPONG, vmath.vector3(0), go.EASING_LINEAR, 0.1, 0, function ()
+                go.animate("/player_sprite", "scale", go.PLAYBACK_ONCE_PINGPONG, vmath.vector3(0.5, 2, 1), go.EASING_LINEAR, 0.3, 0, function ()
                 end)
             end)
             
@@ -77,7 +79,9 @@ function update(self, dt)
                 go.delete(dash)
 
                 -- Stop shockwave
-                timer.cancel(shock_timer)
+                if shock_timer then
+                    timer.cancel(shock_timer)
+                end
                 go.set("/shockwave#quad", "u_in", vmath.vector4(0, -100000, 0, 0))
 
                 -- Can dash again
@@ -100,6 +104,7 @@ function update(self, dt)
     end
 
     -- Rotate to mouse
+    pprint(follow_dist)
     local rotate_angle = math.atan2(follow_dist.x, follow_dist.y)
     local rotate_quat = vmath.quat_rotation_z(-rotate_angle)
     go.set_rotation(rotate_quat)
@@ -140,7 +145,6 @@ function on_message(self, message_id, message, sender)
     elseif message_id == COLLISION then
         -- Ship is kinematic
         -- We need to apply force to dinamic objects
-
         local url = msg.url(message.other_id)
         url.fragment = "collisionobject"
 

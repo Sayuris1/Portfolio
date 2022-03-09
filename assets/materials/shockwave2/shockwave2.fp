@@ -47,6 +47,7 @@ void main()
         //Blow out the color and reduce the effect over time
 		color += (color * scale_diff) / (current_time * dist * 40.0);
 	} 
-    
-	gl_FragColor = color; 
+
+    lowp vec4 tint_pm = vec4(tint.xyz * tint.w, tint.w);
+    gl_FragColor = color * tint_pm; 
 }

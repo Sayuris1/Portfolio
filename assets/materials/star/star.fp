@@ -1,6 +1,7 @@
 //precision highp float;
 
 uniform lowp vec4 u_in;
+uniform lowp vec4 tint;
 uniform lowp sampler2D texture_sampler;
 
 varying mediump vec2 var_texcoord0;
@@ -108,8 +109,9 @@ void main() {
     const vec3 to = vec3(0.00, 0.00, 0.00);
     vec3 weight = vec3(uv.y, uv.y, uv.y);
     
-    vec3 color = mix(from, to, weight) * 0.5;
+    vec3 bg = mix(from, to, weight) * 0.5;
 
+    vec3 color = vec3(0.0);
     // Cloud effect
     const vec3 cloud_color = vec3(0.2, 0.1, 0.5);
     color += smoothstep(0.6, 0.7, fbm(uv * 2.0, pos)) * cloud_color * 1.2;
@@ -121,5 +123,7 @@ void main() {
     color += star_layer(uv + 1230.4 + pos * 0.6, 0.8);
     color += star_layer(uv + pos * 0.3, 1.0);
 
-    gl_FragColor = vec4(color, 1.0);
+    lowp vec4 tint_pm = vec4(tint.xyz * tint.w, tint.w);
+
+    gl_FragColor = vec4(color, 1.0) * tint_pm + vec4(bg, 1.0);
 }
