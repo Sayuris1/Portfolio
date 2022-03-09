@@ -13,6 +13,7 @@ function init(self)
 	self.text_pred = render.predicate({"text"})
 	self.particle_pred = render.predicate({"particle"})
     self.blur_pred = render.predicate({"blur"})
+    self.blur_2_pred = render.predicate({"blur_2"})
     self.cloud_pred = render.predicate({"cloud"})
     self.shock_pred = render.predicate({"shock"})
 
@@ -81,7 +82,8 @@ function update(self)
     -- Draw normal
 	render.set_view(camera.get_view())
 	render.set_projection(camera.get_projection())
-	render.draw(self.tile_2_pred)
+    render.draw(self.tile_2_pred)
+    render.draw(self.blur_2_pred)
 
     -- Change quat to screen space
 	render.set_view(IDENTITY)
@@ -94,8 +96,8 @@ function update(self)
 
     -- Draw normal
 	render.set_view(camera.get_view())
-	render.set_projection(camera.get_projection())
-	render.draw(self.tile_pred)
+    render.set_projection(camera.get_projection())
+    render.draw(self.tile_pred)
 	
 	-- Draw gui in screen space using an orthographic projection
 	render.disable_state(render.STATE_DEPTH_TEST)
