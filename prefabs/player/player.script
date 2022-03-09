@@ -72,10 +72,10 @@ function update(self, dt)
             local dash = factory.create("#dash")
             local url = msg.url(dash); url.fragment = "sprite"
             go.animate(dash, "position", go.PLAYBACK_ONCE_FORWARD, self.pos_current, go.EASING_LINEAR, 1.8)
-            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.7, 0.0, function() 
+            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.5, 0.0, function() 
                 go.delete(dash)
                 -- Stop shockwave
-                go.set("/shockwave#quad", "u_in", vmath.vector4(-100, -100, 0.1, 0))
+                go.set("/shockwave#quad", "u_in", vmath.vector4(0, -100000, 0, 0))
                 timer.cancel(shock_timer)
                 -- Can dash again
                 self.dash = true
