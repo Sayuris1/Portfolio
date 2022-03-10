@@ -95,7 +95,7 @@ end
 
 function on_message(self, message_id, message)
     -- Message.index = self.points index
-    -- Message.points = new position
+    -- Message.new_pos = new position
     if message_id == UPDATE_POINT then
         -- Update node position
         if self.is_nodes then
@@ -104,6 +104,8 @@ function on_message(self, message_id, message)
 
         -- Set new points
         self["pos_" .. message.index] = message.new_pos
+
+        go.set_position(message.new_pos, "pos_" .. message.index)
 
     -- message.enabled = adjust nodes enable
     elseif message_id == SET_NODE then
