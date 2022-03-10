@@ -24,6 +24,7 @@ max_count = 10000
 [physics]
 gravity_y = 0.0
 scale = 0.01
+debug = 1
 
 [html5]
 scale_mode = fit

@@ -1,5 +1,4 @@
 local camera = require "orthographic.camera"
-local cursor = require "in.cursor"
 
 function init(self)
     self.cursor_hashes = {[hash("/start")] = "start()"}

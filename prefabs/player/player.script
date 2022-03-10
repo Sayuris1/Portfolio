@@ -114,31 +114,35 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == TRIGGER and message.enter then
-        local collision = msg.url(message.other_id)
-        collision.fragment = "collisionobject"
-        msg.post(collision, "disable")
+	if message_id == TRIGGER then
+        if message.group == hash("sign") then
+            msg.post("/signs#collisionobject", "disable")
+        elseif message.enter and message.group ~= hash("box") then
+            local collision = msg.url(message.other_id)
+            collision.fragment = "collisionobject"
+            msg.post(collision, "disable")
 
-        local duration = 0.2
-        local pos_particle = go.get_position(message.other_id)
-        local to = pos_particle + self.steering * math.min(self.current_speed * 3, 100)
-        to.z = pos_particle.z
+            local duration = 0.2
+            local pos_particle = go.get_position(message.other_id)
+            local to = pos_particle + self.steering * math.min(self.current_speed * 3, 100)
+            to.z = pos_particle.z
 
-        local url = msg.url(go.get_parent(message.other_id))
-        url.fragment = "script"
+            local url = msg.url(go.get_parent(message.other_id))
+            url.fragment = "script"
 
-        if message.group == hash(1) then
-            go.animate(url, "pos_1", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
-                msg.post(collision, "enable")
-            end)
-        elseif message.group == hash(2) then
-            go.animate(url, "pos_2", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
-                msg.post(collision, "enable")
-            end)
-        elseif message.group == hash(3) then
-            go.animate(url, "pos_3", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
-                msg.post(collision, "enable")
-            end)
+            if message.group == hash(1) then
+                go.animate(url, "pos_1", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
+                    msg.post(collision, "enable")
+                end)
+            elseif message.group == hash(2) then
+                go.animate(url, "pos_2", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
+                    msg.post(collision, "enable")
+                end)
+            elseif message.group == hash(3) then
+                go.animate(url, "pos_3", go.PLAYBACK_ONCE_PINGPONG, to, go.EASING_OUTQUAD, duration, 0, function ()
+                    msg.post(collision, "enable")
+                end)
+            end
         end
 
     elseif message_id == COLLISION then

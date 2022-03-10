@@ -100,4 +100,5 @@ function update(self)
 	render.set_view(camera.get_view())
     render.set_projection(camera.get_projection())
     render.draw(self.tile_pred)
+    render.draw_debug3d()
 end

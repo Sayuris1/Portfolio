@@ -1,8 +1,13 @@
+local cursor = require "in.cursor"
+
 local UPDATE_POINT = hash("update_point")
+local TRIGGER = hash("trigger_response")
 
 function init(self)
 	go.property("middle", vmath.vector3(0))
 	go.property("size", vmath.vector3(0))
+
+    go.set_position(self.middle)
 
     msg.post("down_1/line#script", UPDATE_POINT, {index = 1, new_pos = vmath.vector3(self.middle.x - self.size.x * 2, self.middle.y - self.size.y, self.middle.z)})
     msg.post("down_1/line#script", UPDATE_POINT, {index = 3, new_pos = vmath.vector3(self.middle.x - self.size.x, self.middle.y - self.size.y, self.middle.z)})
@@ -27,4 +32,16 @@ function init(self)
     msg.post("right/line#script", UPDATE_POINT, {index = 1, new_pos = vmath.vector3(self.middle.x + self.size.x * 2, self.middle.y - self.size.y, self.middle.z)})
     msg.post("right/line#script", UPDATE_POINT, {index = 3, new_pos = vmath.vector3(self.middle.x + self.size.x * 2, self.middle.y, self.middle.z)})
     msg.post("right/line#script", UPDATE_POINT, {index = 2, new_pos = vmath.vector3(self.middle.x + self.size.x * 2, self.middle.y + self.size.y, self.middle.z)})
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == TRIGGER then
+        if message.enter then
+            self.is_in_box = true
+        else
+            self.is_in_box = false
+        end
+    elseif message_id == cursor.RELEASED and self.is_in_box then
+        print("go")
+    end
 end

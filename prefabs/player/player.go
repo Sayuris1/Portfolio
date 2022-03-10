@@ -26,6 +26,7 @@ embedded_components {
   "mask: \"2\"\n"
   "mask: \"3\"\n"
   "mask: \"alphabet\"\n"
+  "mask: \"box\"\n"
   "mask: \"sign\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
