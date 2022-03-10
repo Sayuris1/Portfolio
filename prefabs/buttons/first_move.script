@@ -1,6 +1,16 @@
 local camera = require "orthographic.camera"
 
 local TOUCH = hash("touch")
+local TRIGGER = hash("trigger_response")
+
+function on_message(self, message_id, message, sender)
+    if message_id == TRIGGER and message.enter then
+        go.animate("/eng", "position.y", go.PLAYBACK_ONCE_FORWARD, 40, go.EASING_OUTBACK, 2)
+        go.animate("/info", "position.y", go.PLAYBACK_ONCE_FORWARD, -505, go.EASING_OUTBACK, 2)
+        go.animate("/shaders", "position.x", go.PLAYBACK_ONCE_FORWARD, -560, go.EASING_OUTBACK, 2)
+        go.animate("/games", "position.x", go.PLAYBACK_ONCE_FORWARD, 560, go.EASING_OUTBACK, 2)
+    end
+end
 
 function on_input(self, action_id, action)
     if action_id == TOUCH then

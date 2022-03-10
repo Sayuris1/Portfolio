@@ -25,3 +25,9 @@ max_count = 10000
 gravity_y = 0.0
 scale = 0.01
 
+[html5]
+scale_mode = fit
+show_fullscreen_button = 0
+show_made_with_defold = 0
+show_console_banner = 0
+

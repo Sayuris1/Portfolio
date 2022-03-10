@@ -41,7 +41,7 @@ function on_message(self, message_id, message, sender)
         go.animate("#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 1, 0, function ()
             go.animate("/player", "position", go.PLAYBACK_ONCE_FORWARD, go.get_position(), go.EASING_OUTSINE, 1, 0, function ()
                 msg.post("/player#script", "acquire_input_focus")
-                msg.post("/name/A#first_move", "acquire_input_focus")
+                msg.post("/signs#first_move", "acquire_input_focus")
                 go.delete()
 
                 go.animate("/go#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_INCUBIC, 0.5)

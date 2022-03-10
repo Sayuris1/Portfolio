@@ -42,7 +42,7 @@ function update(self, dt)
     go.set_position(self.pos_current)
    
     -- When going fast
-    if vmath.length_sqr(dir) > 200 then
+    if vmath.length_sqr(dir) > 150 then
         -- Animate trail color to red
         go.animate("/player_trail#trail_model", "u_color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(1, 0, 0, 1), go.EASING_OUTEXPO, 0.5)
         -- Play dash animation
