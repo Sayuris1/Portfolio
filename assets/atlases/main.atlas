@@ -38,6 +38,22 @@ images {
   image: "/assets/imgs/eng.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/imgs/in.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/imgs/pmail.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/imgs/git.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/imgs/twit.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 margin: 1
 extrude_borders: 2
 inner_padding: 1
