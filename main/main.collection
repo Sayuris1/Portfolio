@@ -258,6 +258,510 @@ collection_instances {
     z: 1.0
   }
 }
+collection_instances {
+  id: "jumpy_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "1350.0, -200.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "color_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "2350.0, -200.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "vhs_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "3350.0, -200.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "dream_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "1850.0, -270.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "pong_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "2850.0, -270.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "obstacle_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "3850.0, -270.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "fsm_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "-190.0, 570.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "fuzzy_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "-190.0, 1070.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "rent_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "-190.0, 1570.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "blur_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "-1350.0, -200.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "cloud_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "-1850.0, -270.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "dissolve_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "-2350.0, -200.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "shockwave_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "-2850.0, -270.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "star_box"
+  collection: "/prefabs/box/bezier_box.collection"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "placer"
+    properties {
+      id: "box_placer"
+      properties {
+        id: "middle"
+        value: "-3350.0, -200.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+      properties {
+        id: "size"
+        value: "30.0, 25.0, 0.0"
+        type: PROPERTY_TYPE_VECTOR3
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "star"
@@ -1031,7 +1535,7 @@ embedded_instances {
   data: ""
   position {
     x: 0.0
-    y: 466.0
+    y: 0.0
     z: 0.0
   }
   rotation {
@@ -1048,6 +1552,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "color"
+  children: "color_itch"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1070,8 +1575,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 370.0
-    y: 328.0
+    x: 2350.0
+    y: -20.0
     z: 0.0
   }
   rotation {
@@ -1088,6 +1593,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "dream"
+  children: "dream_itch"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1110,8 +1616,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 10.0
-    y: 327.0
+    x: 1850.0
+    y: -450.0
     z: 0.0
   }
   rotation {
@@ -1128,6 +1634,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "jumpy"
+  children: "jumpy_itch"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1150,8 +1657,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -348.0
-    y: 327.0
+    x: 1350.0
+    y: -20.0
     z: 0.0
   }
   rotation {
@@ -1168,6 +1675,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "pong"
+  children: "pong_itch"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1190,8 +1698,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -347.0
-    y: 624.0
+    x: 2850.0
+    y: -450.0
     z: 0.0
   }
   rotation {
@@ -1208,6 +1716,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "vhs"
+  children: "vhs_itch"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1230,8 +1739,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 14.0
-    y: 624.0
+    x: 3350.0
+    y: -20.0
     z: 0.0
   }
   rotation {
@@ -1248,6 +1757,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "obstacle"
+  children: "obstacle_itch"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1270,8 +1780,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 378.0
-    y: 624.0
+    x: 3850.0
+    y: -450.0
     z: 0.0
   }
   rotation {
@@ -1294,7 +1804,7 @@ embedded_instances {
   data: ""
   position {
     x: 0.0
-    y: 411.0
+    y: 0.0
     z: 0.0
   }
   rotation {
@@ -1311,6 +1821,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "fuzzy"
+  children: "fuzzy_git"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1333,8 +1844,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -711.0
-    y: 323.0
+    x: -440.0
+    y: 1070.0
     z: 0.0
   }
   rotation {
@@ -1351,6 +1862,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "fsm"
+  children: "fsm_git"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1373,8 +1885,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -715.0
-    y: 625.0
+    x: -440.0
+    y: 570.0
     z: 0.0
   }
   rotation {
@@ -1391,6 +1903,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "rent_site"
+  children: "rent_git"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1413,8 +1926,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -1087.0
-    y: 627.0
+    x: -440.0
+    y: 1570.0
     z: 0.0
   }
   rotation {
@@ -1456,6 +1969,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "blur_ico"
+  children: "blur_git"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1478,8 +1992,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -1110.0
-    y: 314.0
+    x: -1350.0
+    y: -20.0
     z: 0.0
   }
   rotation {
@@ -1496,6 +2010,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "star_field"
+  children: "star_git"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1518,8 +2033,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -1493.0
-    y: 314.0
+    x: -3350.0
+    y: -20.0
     z: 0.0
   }
   rotation {
@@ -1536,6 +2051,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "dissolve"
+  children: "dissolve_git"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1558,8 +2074,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -1479.0
-    y: 644.0
+    x: -2350.0
+    y: -20.0
     z: 0.0
   }
   rotation {
@@ -1576,6 +2092,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "cloud_ico"
+  children: "cloud_git"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1598,8 +2115,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -1876.0
-    y: 314.0
+    x: -1850.0
+    y: -450.0
     z: 0.0
   }
   rotation {
@@ -1616,6 +2133,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "shockwave_ico"
+  children: "shock_git"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
@@ -1638,8 +2156,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -1876.0
-    y: 637.0
+    x: -2850.0
+    y: -450.0
     z: 0.0
   }
   rotation {
@@ -2049,9 +2567,9 @@ embedded_instances {
 embedded_instances {
   id: "info_icos"
   children: "github"
+  children: "itch"
   children: "likedin"
   children: "mail"
-  children: "twitter"
   data: ""
   position {
     x: 5.0
@@ -2194,13 +2712,13 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "twitter"
-  children: "twit"
+  id: "itch"
+  children: "itc"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/assets/atlases/games.atlas\\\"\\n"
-  "default_animation: \\\"twitter\\\"\\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"itch_logo\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -2355,12 +2873,12 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "twit"
+  id: "itc"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
-  "default_animation: \\\"twit\\\"\\n"
+  "default_animation: \\\"itch\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -2380,6 +2898,566 @@ embedded_instances {
   position {
     x: 0.0
     y: -232.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "color_itch"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"itch\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "dream_itch"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"itch\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "jumpy_itch"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"itch\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "obstacle_itch"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"itch\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "pong_itch"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"itch\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "vhs_itch"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"itch\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "fsm_git"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"git\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 239.0
+    y: -64.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "fuzzy_git"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"git\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 239.0
+    y: -64.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "rent_git"
+  data: "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"git\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 239.0
+    y: -64.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "blur_git"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"git\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "cloud_git"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"git\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "dissolve_git"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"git\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "shock_git"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"git\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+embedded_instances {
+  id: "star_git"
+  data: "embedded_components {\n"
+  "  id: \"sprite1\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/assets/atlases/main.atlas\\\"\\n"
+  "default_animation: \\\"git\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: -234.0
     z: 0.0
   }
   rotation {
