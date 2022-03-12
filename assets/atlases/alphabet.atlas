@@ -1,65 +1,61 @@
 images {
-  image: "/assets/imgs/A.png"
+  image: "/assets/imgs/alphabet/A.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/L.png"
+  image: "/assets/imgs/alphabet/L.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/P.png"
+  image: "/assets/imgs/alphabet/P.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/E.png"
+  image: "/assets/imgs/alphabet/E.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/G.png"
+  image: "/assets/imgs/alphabet/G.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/U_2.png"
+  image: "/assets/imgs/alphabet/U_2.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/N.png"
+  image: "/assets/imgs/alphabet/N.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/O.png"
+  image: "/assets/imgs/alphabet/O.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/dev.png"
+  image: "/assets/imgs/text/dev.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/des.png"
+  image: "/assets/imgs/text/des.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/fuzzy.png"
+  image: "/assets/imgs/capsules/eng/fuzzy.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/fsm.png"
+  image: "/assets/imgs/capsules/eng/fsm.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/rent_site.png"
+  image: "/assets/imgs/capsules/eng/rent_site.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/lisa.png"
+  image: "/assets/imgs/capsules/lisa.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/star_field.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/imgs/start.png"
+  image: "/assets/imgs/capsules/star_field.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {

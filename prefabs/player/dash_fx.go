@@ -2,13 +2,13 @@ embedded_components {
   id: "sprite"
   type: "sprite"
   data: "tile_set: \"/assets/atlases/main.atlas\"\n"
-  "default_animation: \"circle\"\n"
+  "default_animation: \"warp_circle\"\n"
   "material: \"/assets/materials/dissolve/dissolve.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
     x: 0.0
-    y: 150.0
+    y: 42.0
     z: 0.0
   }
   rotation {

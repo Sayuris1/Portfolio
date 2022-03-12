@@ -1,45 +1,41 @@
 images {
-  image: "/assets/imgs/games/color.png"
+  image: "/assets/imgs/capsules/games/color.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/games/dream.png"
+  image: "/assets/imgs/capsules/games/dream.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/games/jumpy.png"
+  image: "/assets/imgs/capsules/games/jumpy.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/games/pong.png"
+  image: "/assets/imgs/capsules/games/pong.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/games/vhs.png"
+  image: "/assets/imgs/capsules/games/vhs.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/games/obstacle.png"
+  image: "/assets/imgs/capsules/games/obstacle.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/github.png"
+  image: "/assets/imgs/capsules/icos/github.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/linkedin.png"
+  image: "/assets/imgs/capsules/icos/linkedin.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/twitter.png"
+  image: "/assets/imgs/capsules/icos/mail.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/mail.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/imgs/mouse_click.png"
+  image: "/assets/imgs/text/mouse_click.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

@@ -68,10 +68,10 @@ function update(self, dt)
                 end)
             end)
             
-            local dash = factory.create("#dash")
+            local dash = factory.create("#dash", nil, go.get_rotation(), nil, vmath.vector3(0.2))
             local url = msg.url(dash); url.fragment = "sprite"
             -- Ghost animate
-            go.animate(dash, "position", go.PLAYBACK_ONCE_FORWARD, self.pos_current, go.EASING_LINEAR, 1.8)
+            go.animate(dash, "position", go.PLAYBACK_ONCE_FORWARD, self.pos_current, go.EASING_LINEAR, 1)
 
             -- Set dissolve shader constant
             -- We can use go.animate
@@ -91,10 +91,10 @@ function update(self, dt)
             -- Dash_fx animate
             local dash_fx = factory.create("#dash_fx", go.get_position(), go.get_rotation(), nil, vmath.vector3(0))
             local url = msg.url(dash_fx); url.fragment = "sprite"
-            go.animate(dash_fx, "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(0.3), go.EASING_OUTBACK, 0.5)
+            go.animate(dash_fx, "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(0.6), go.EASING_OUTBACK, 1)
 
             -- Set dissolve shader constant
-            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.5)
+            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 2.5)
         end
 
     -- When going slow

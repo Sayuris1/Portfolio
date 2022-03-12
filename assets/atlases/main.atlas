@@ -1,65 +1,53 @@
 images {
-  image: "/assets/imgs/ship.png"
+  image: "/assets/imgs/player/ship.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/star.png"
+  image: "/assets/imgs/player/ship_phaze.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/particle_blob.png"
+  image: "/assets/imgs/signs/games.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/ship_phaze.png"
+  image: "/assets/imgs/signs/shaders.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/dash.png"
+  image: "/assets/imgs/signs/info.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/circle.png"
+  image: "/assets/imgs/signs/eng.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/games.png"
+  image: "/assets/imgs/text/in.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/Shaders.png"
+  image: "/assets/imgs/text/pmail.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/info.png"
+  image: "/assets/imgs/text/git.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/eng.png"
+  image: "/assets/imgs/text/itch.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/in.png"
+  image: "/assets/imgs/capsules/icos/itch_logo.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/pmail.png"
+  image: "/assets/imgs/player/warp_circle.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/git.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/imgs/twit.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/imgs/itch.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/imgs/itch_logo.png"
+  image: "/assets/imgs/start.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 1
