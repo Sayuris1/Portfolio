@@ -7,13 +7,7 @@ local IDENTITY = vmath.matrix4()
 function init(self)
     -- Tile that doesn't get effected from shockwave
 	self.tile_pred = render.predicate({"tile"})
-
-    -- Tile that gets effected from shockwave
-	self.tile_2_pred = render.predicate({"tile_2"})
-
     self.blur_pred = render.predicate({"blur"}) -- Screen space blur
-    self.blur_2_pred = render.predicate({"blur_2"}) -- Blur only textured image
-
     self.star_pred = render.predicate({"star"})
     self.shock_pred = render.predicate({"shock"})
 
@@ -27,7 +21,8 @@ function init(self)
                            u_wrap = render.WRAP_CLAMP_TO_EDGE,
                            v_wrap = render.WRAP_CLAMP_TO_EDGE }
 
-    self.blur_target = render.render_target({[render.BUFFER_COLOR_BIT] = color_params})
+    self.horizantal_target = render.render_target({[render.BUFFER_COLOR_BIT] = color_params})
+    self.vertical_target = render.render_target({[render.BUFFER_COLOR_BIT] = color_params})
     self.shock_target = render.render_target({[render.BUFFER_COLOR_BIT] = color_params})
 end
 
@@ -46,8 +41,9 @@ function update(self)
 	render.set_projection(camera.get_projection())
     
     -- Change buffer to blur target
-    render.set_render_target_size(self.blur_target, viewport.z, viewport.w)
-    render.set_render_target(self.blur_target)
+    render.set_render_target_size(self.horizantal_target, viewport.z, viewport.w)
+    render.set_render_target(self.horizantal_target)
+	render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
 
     -- Clear blur target
 	render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
@@ -55,7 +51,22 @@ function update(self)
     -- Draw to blur target
     -- Only blur tiles
 	render.draw(self.tile_pred)
-	render.draw(self.tile_2_pred)
+
+    render.set_render_target_size(self.vertical_target, viewport.z, viewport.w)
+    render.set_render_target(self.vertical_target)
+	render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
+
+    local vertical = render.constant_buffer()
+    vertical.u_dir = vmath.vector4(0, 1, 0, 0)
+
+    -- Change quat to screen space
+	render.set_view(IDENTITY)
+    render.set_projection(vmath.matrix4())
+
+    render.enable_texture(0, self.horizantal_target, render.BUFFER_COLOR_BIT)
+    render.draw(self.blur_pred, vertical)
+    render.disable_texture(0)
+
     -- Blur draw end
 
     -- Change quat to screen space
@@ -69,8 +80,7 @@ function update(self)
     -- Draw starfield
     render.draw(self.star_pred)
 
-    -- Draw blured
-    render.enable_texture(0, self.blur_target, render.BUFFER_COLOR_BIT)
+    render.enable_texture(0, self.vertical_target, render.BUFFER_COLOR_BIT)
     render.draw(self.blur_pred)
     render.disable_texture(0)
 
@@ -79,9 +89,7 @@ function update(self)
 	render.set_projection(camera.get_projection())
 
     -- Draw normal
-    -- Tile_1 doens't get effected from shockwave
-    render.draw(self.tile_2_pred)
-    render.draw(self.blur_2_pred)
+    render.draw(self.tile_pred)
     -- Shock target end
 
     -- Draw to screen
@@ -95,10 +103,4 @@ function update(self)
     render.enable_texture(0, self.shock_target, render.BUFFER_COLOR_BIT)
 	render.draw(self.shock_pred)
     render.disable_texture(0)
-
-    -- Draw not effected tiles
-	render.set_view(camera.get_view())
-    render.set_projection(camera.get_projection())
-    render.draw(self.tile_pred)
-    render.draw_debug3d()
 end

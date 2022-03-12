@@ -80,7 +80,7 @@ instances {
   position {
     x: 0.0
     y: -220.0
-    z: -10.0
+    z: -5.0
   }
   rotation {
     x: 0.0
@@ -889,7 +889,7 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: -9.0
   }
   rotation {
     x: 0.0
@@ -911,7 +911,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/games.atlas\\\"\\n"
   "default_animation: \\\"color\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -952,7 +952,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/games.atlas\\\"\\n"
   "default_animation: \\\"dream\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -993,7 +993,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/games.atlas\\\"\\n"
   "default_animation: \\\"jumpy\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1034,7 +1034,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/games.atlas\\\"\\n"
   "default_animation: \\\"pong\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1075,7 +1075,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/games.atlas\\\"\\n"
   "default_animation: \\\"vhs\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1116,7 +1116,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/games.atlas\\\"\\n"
   "default_animation: \\\"obstacle\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1158,7 +1158,7 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: -9.0
   }
   rotation {
     x: 0.0
@@ -1180,7 +1180,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/alphabet.atlas\\\"\\n"
   "default_animation: \\\"fuzzy\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1221,7 +1221,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/alphabet.atlas\\\"\\n"
   "default_animation: \\\"fsm\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1262,7 +1262,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/alphabet.atlas\\\"\\n"
   "default_animation: \\\"rent_site\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1306,7 +1306,7 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: -9.0
   }
   rotation {
     x: 0.0
@@ -1328,7 +1328,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/alphabet.atlas\\\"\\n"
   "default_animation: \\\"lisa\\\"\\n"
-  "material: \\\"/assets/materials/blur/blur_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1369,7 +1369,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/alphabet.atlas\\\"\\n"
   "default_animation: \\\"star_field\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1410,7 +1410,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/alphabet.atlas\\\"\\n"
   "default_animation: \\\"lisa\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1451,7 +1451,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/alphabet.atlas\\\"\\n"
   "default_animation: \\\"lisa\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1492,7 +1492,7 @@ embedded_instances {
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/assets/atlases/alphabet.atlas\\\"\\n"
   "default_animation: \\\"lisa\\\"\\n"
-  "material: \\\"/assets/materials/sprite_2.material\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
   "  position {\n"
@@ -1927,7 +1927,7 @@ embedded_instances {
   position {
     x: 5.0
     y: -1090.0
-    z: 0.0
+    z: -9.0
   }
   rotation {
     x: 0.0

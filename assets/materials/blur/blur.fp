@@ -3,25 +3,23 @@ varying mediump vec2 var_texcoord0;
 uniform lowp sampler2D texture_sampler;
 uniform lowp vec4 tint;
 
+uniform vec4 u_dir;
+
 void main() {
-    const float pi_2 = 6.28318530718; // pi_2*2
+	vec4 color = vec4(0.0);
     
-    // Settings
-    const float directions = 16.0; // BLUR DIRECTIONS (Default 16.0 - More is better but slower)
-    const float quality = 10.0; // BLUR QUALITY (Default 4.0 - More is better but slower)
-    const vec2 radius = vec2(5.0) / vec2(1280, 720); // BLUR SIZE (radius)
-   
-    vec4 color = texture2D(texture_sampler, var_texcoord0);
-    
-    // Blur calculations
-    for( float d = 0.0; d < pi_2; d += pi_2 / directions) {
-		for(float i = 1.0 / quality; i <= 1.0; i+= 1.0 / quality) {
-			color += texture2D(texture_sampler, var_texcoord0 + vec2(cos(d), sin(d)) * radius * i);		
-        }
-    }
+	//apply blurring, using a 9-tap filter with predefined gaussian weights
+	color += texture2D(texture_sampler, vec2(var_texcoord0.x - 0.01111111111 * u_dir.x, var_texcoord0.y - 0.01111111111 * u_dir.y)) * 0.0162162162;
+	color += texture2D(texture_sampler, vec2(var_texcoord0.x - 0.00833333333 * u_dir.x, var_texcoord0.y - 0.00833333333 * u_dir.y)) * 0.0540540541;
+	color += texture2D(texture_sampler, vec2(var_texcoord0.x - 0.00555555555 * u_dir.x, var_texcoord0.y - 0.00555555555 * u_dir.y)) * 0.1216216216;
+	color += texture2D(texture_sampler, vec2(var_texcoord0.x - 0.00277777777 * u_dir.x, var_texcoord0.y - 0.00277777777 * u_dir.y)) * 0.1945945946;
+	
+	color += texture2D(texture_sampler, var_texcoord0.xy) * 0.2270270270;
+	
+	color += texture2D(texture_sampler, vec2(var_texcoord0.x + 0.00277777777 * u_dir.x, var_texcoord0.y + 0.00277777777 * u_dir.y)) * 0.1945945946;
+	color += texture2D(texture_sampler, vec2(var_texcoord0.x + 0.00555555555 * u_dir.x, var_texcoord0.y + 0.00555555555 * u_dir.y)) * 0.1216216216;
+	color += texture2D(texture_sampler, vec2(var_texcoord0.x + 0.00833333333 * u_dir.x, var_texcoord0.y + 0.00833333333 * u_dir.y)) * 0.0540540541;
+	color += texture2D(texture_sampler, vec2(var_texcoord0.x + 0.01111111111 * u_dir.x, var_texcoord0.y + 0.01111111111 * u_dir.y)) * 0.0162162162;
 
-    // Output to screen
-    color /= quality * directions - 15.0;
-
-    gl_FragColor = color * 2.0;
+	gl_FragColor = color;
 }
