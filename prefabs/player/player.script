@@ -75,7 +75,7 @@ function update(self, dt)
 
             -- Set dissolve shader constant
             -- We can use go.animate
-            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 1.5, 0.0, function() 
+            go.animate(url, "tint.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 1.0, 0.0, function() 
                 go.delete(dash)
 
                 -- Stop shockwave
@@ -94,7 +94,7 @@ function update(self, dt)
             go.animate(dash_fx, "scale", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(0.6), go.EASING_OUTBACK, 1)
 
             -- Set dissolve shader constant
-            go.animate(url, "u_time.x", go.PLAYBACK_ONCE_FORWARD, 1.8, go.EASING_LINEAR, 2.5)
+            go.animate(url, "tint.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 1.5)
         end
 
     -- When going slow

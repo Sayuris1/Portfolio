@@ -1,0 +1,202 @@
+name: "default"
+collection_instances {
+  id: "fuzzy_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: -207.0
+    y: 1070.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "site_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: -207.0
+    y: 1570.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "jumpy_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: 1350.0
+    y: -200.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "color_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: 2350.0
+    y: -200.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "dream_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: 1850.0
+    y: -270.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "pong_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: 2850.0
+    y: -270.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "fsm_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: -207.0
+    y: 570.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "vhs_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: 3350.0
+    y: -200.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "name"
+  collection: "/prefabs/name/name.collection"
+  position {
+    x: -130.0
+    y: -315.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.5
+    y: 0.5
+    z: 0.5
+  }
+}
+collection_instances {
+  id: "obstacle_link"
+  collection: "/prefabs/link/link.collection"
+  position {
+    x: 3850.0
+    y: -270.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0

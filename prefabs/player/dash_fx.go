@@ -3,7 +3,7 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/assets/atlases/main.atlas\"\n"
   "default_animation: \"warp_circle\"\n"
-  "material: \"/assets/materials/dissolve/dissolve.material\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
