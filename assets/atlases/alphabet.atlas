@@ -51,11 +51,7 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/capsules/lisa.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/imgs/capsules/star_field.png"
+  image: "/assets/imgs/capsules/shaders/star_field.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
