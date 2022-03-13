@@ -1,6 +1,6 @@
 name: "blur"
 tags: "blur"
-vertex_program: "/assets/materials/blur/blur.vp"
+vertex_program: "/builtins/materials/sprite.vp"
 fragment_program: "/assets/materials/blur/blur.fp"
 vertex_space: VERTEX_SPACE_WORLD
 vertex_constants {

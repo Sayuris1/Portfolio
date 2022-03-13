@@ -286,7 +286,7 @@ embedded_instances {
   "  id: \"quad\"\n"
   "  type: \"model\"\n"
   "  data: \"mesh: \\\"/builtins/assets/meshes/quad_2x2.dae\\\"\\n"
-  "material: \\\"/assets/materials/shockwave2/shockwave2.material\\\"\\n"
+  "material: \\\"/assets/materials/shockwave/shockwave2.material\\\"\\n"
   "skeleton: \\\"\\\"\\n"
   "animations: \\\"\\\"\\n"
   "default_animation: \\\"\\\"\\n"
