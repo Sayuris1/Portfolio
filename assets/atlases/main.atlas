@@ -31,14 +31,6 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/text/git.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/assets/imgs/text/itch.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
   image: "/assets/imgs/capsules/icos/itch_logo.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
