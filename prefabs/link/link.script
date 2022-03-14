@@ -11,6 +11,7 @@ function init(self)
         [hash("/links/itch_link/link")] = "window.open('https://sayuri1.itch.io/')",
 
         -- Shaders
+        [hash("/links/lights_link/link")] = "window.open('https://github.com/defold/sample-lights-and-shadows')",
         [hash("/links/blur_link/link")] = "window.open('https://sayuri1.itch.io/')",
         [hash("/links/cloud_link/link")] = "window.open('https://sayuri1.itch.io/')",
         [hash("/links/dissolve_link/link")] = "window.open('https://sayuri1.itch.io/')",
