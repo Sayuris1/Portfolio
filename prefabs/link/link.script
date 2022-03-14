@@ -12,11 +12,11 @@ function init(self)
 
         -- Shaders
         [hash("/links/lights_link/link")] = "window.open('https://github.com/defold/sample-lights-and-shadows')",
-        [hash("/links/blur_link/link")] = "window.open('https://sayuri1.itch.io/')",
-        [hash("/links/cloud_link/link")] = "window.open('https://sayuri1.itch.io/')",
-        [hash("/links/dissolve_link/link")] = "window.open('https://sayuri1.itch.io/')",
-        [hash("/links/shock_link/link")] = "window.open('https://sayuri1.itch.io/')",
-        [hash("/links/star_link/link")] = "window.open('https://sayuri1.itch.io/')",
+        [hash("/links/blur_link/link")] = "window.open('https://www.shadertoy.com/view/fs2fWc')",
+        [hash("/links/cloud_link/link")] = "window.open('https://github.com/Sayuris1/Portfolio/blob/main/assets/materials/star/star.fp')",
+        [hash("/links/dissolve_link/link")] = "window.open('https://www.shadertoy.com/view/fsjBDc')",
+        [hash("/links/shock_link/link")] = "window.open('https://github.com/Sayuris1/Portfolio/blob/main/assets/materials/shockwave/shockwave2.fp')",
+        [hash("/links/star_link/link")] = "window.open('https://github.com/Sayuris1/Portfolio/blob/main/assets/materials/star/star.fp')",
 
         -- Games
         [hash("/links/jumpy_link/link")] = "window.open('https://sayuri1.itch.io/jumpy')",
