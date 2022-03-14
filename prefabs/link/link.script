@@ -3,6 +3,34 @@ local cursor = require "in.cursor"
 local TRIGGER = hash("trigger_response")
 
 function init(self)
+    self.cursor_hashes = {
+        -- Info
+        [hash("/links/linkedin_link/link")] = "window.open('https://www.linkedin.com/in/alp-ertunga-elg%C3%BCn-84ab30195/')",
+        [hash("/links/mail_link/link")] = "window.open('mailto:elgunalp1@gmail.com')",
+        [hash("/links/github_link/link")] = "window.open('https://github.com/Sayuris1')",
+        [hash("/links/itch_link/link")] = "window.open('https://sayuri1.itch.io/')",
+
+        -- Shaders
+        [hash("/links/blur_link/link")] = "window.open('https://sayuri1.itch.io/')",
+        [hash("/links/cloud_link/link")] = "window.open('https://sayuri1.itch.io/')",
+        [hash("/links/dissolve_link/link")] = "window.open('https://sayuri1.itch.io/')",
+        [hash("/links/shock_link/link")] = "window.open('https://sayuri1.itch.io/')",
+        [hash("/links/star_link/link")] = "window.open('https://sayuri1.itch.io/')",
+
+        -- Games
+        [hash("/links/jumpy_link/link")] = "window.open('https://sayuri1.itch.io/jumpy')",
+        [hash("/links/dream_link/link")] = "window.open('https://sayuri1.itch.io/deep-dream')",
+        [hash("/links/color_link/link")] = "window.open('https://sayuri1.itch.io/whats-your-color')",
+        [hash("/links/pong_link/link")] = "window.open('https://sayuri1.itch.io/pong-fever')",
+        [hash("/links/vhs_link/link")] = "window.open('https://sayuri1.itch.io/vhsloop')",
+        [hash("/links/obstacle_link/link")] = "window.open('https://sayuri1.itch.io/obstacle')",
+
+        -- Eng
+        [hash("/links/fsm_link/link")] = "window.open('https://github.com/Sayuris1/defold_fsm')",
+        [hash("/links/fuzzy_link/link")] = "window.open('https://github.com/Sayuris1/fuzzy')",
+        [hash("/links/site_link/link")] = "window.open('https://github.com/Sayuris1/rent_a_car_asp')",
+    }
+    
 	go.set("click#sprite", "tint.w", 0)
     go.set_position(vmath.vector3(80, -200, 0), "click")
 end
@@ -22,6 +50,7 @@ function on_message(self, message_id, message, sender)
             go.animate("click#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 0.7)
         end
     elseif message_id == cursor.RELEASED and self.is_in_box then
-        print("go")
+        pprint(message.id)
+        html5.run(self.cursor_hashes[message.id])
     end
 end
