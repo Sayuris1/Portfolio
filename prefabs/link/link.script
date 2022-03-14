@@ -2,8 +2,7 @@ local cursor = require "in.cursor"
 
 local TRIGGER = hash("trigger_response")
 
-function init(self)
-    self.cursor_hashes = {
+local cursor_hashes = {
         -- Info
         [hash("/links/linkedin_link/link")] = "window.open('https://www.linkedin.com/in/alp-ertunga-elg%C3%BCn-84ab30195/')",
         [hash("/links/mail_link/link")] = "window.open('mailto:elgunalp1@gmail.com')",
@@ -31,6 +30,11 @@ function init(self)
         [hash("/links/fuzzy_link/link")] = "window.open('https://github.com/Sayuris1/fuzzy')",
         [hash("/links/site_link/link")] = "window.open('https://github.com/Sayuris1/rent_a_car_asp')",
     }
+
+function init(self)
+    if html5.run("(typeof window.orientation !== 'undefined') ||(navigator.userAgent.indexOf('IEMobile') !== -1);") then
+        sprite.play_flipbook("click#sprite", "mouse_click")
+    end
     
 	go.set("click#sprite", "tint.w", 0)
     go.set_position(vmath.vector3(80, -200, 0), "click")
@@ -52,6 +56,6 @@ function on_message(self, message_id, message, sender)
         end
     elseif message_id == cursor.RELEASED and self.is_in_box then
         pprint(message.id)
-        html5.run(self.cursor_hashes[message.id])
+        html5.run(cursor_hashes[message.id])
     end
 end

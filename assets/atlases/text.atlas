@@ -42,6 +42,14 @@ images {
   image: "/assets/imgs/text/lights.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/imgs/text/mouse_click.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/imgs/text/hand_touch.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

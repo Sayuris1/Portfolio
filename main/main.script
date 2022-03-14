@@ -8,6 +8,10 @@ function init(self)
 	-- Parallax variables
     self.camera_id = go.get_id("/camera")
     self.pos_camera = go.get_position(self.camera_id)    
+
+    if html5.run("(typeof window.orientation !== 'undefined') ||(navigator.userAgent.indexOf('IEMobile') !== -1);") then
+        sprite.play_flipbook("/go#sprite", "mouse_click")
+    end
 end
 
 function update(self, dt)

@@ -35,10 +35,6 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/imgs/text/mouse_click.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
   image: "/assets/imgs/text/git.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }

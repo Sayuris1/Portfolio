@@ -24,7 +24,7 @@ function init(self)
     go.set("/go1#sprite", "tint.w", 0)
     go.set("/go2#sprite", "tint.w", 0)
 
-    go.set("/movement#sprite", "tint.w", 0)
+    go.set("/go3#sprite", "tint.w", 0)
 end
 
 function on_message(self, message_id, message, sender)
@@ -45,10 +45,10 @@ function on_message(self, message_id, message, sender)
                 msg.post("/signs#first_move", "acquire_input_focus")
                 go.delete()
 
-                go.animate("/go#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 0.8, go.EASING_OUTCUBIC, 0.5)
-                go.animate("/movement#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1.0, go.EASING_OUTCUBIC, 0.5)
-                go.animate("/go1#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 0.5, go.EASING_INCUBIC, 1.0)
-                go.animate("/go1", "position.y", go.PLAYBACK_LOOP_PINGPONG, -150, go.EASING_INBACK, 3)
+                go.animate("/go#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1.0, go.EASING_OUTCUBIC, 1.5)
+                go.animate("/go3#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1.0, go.EASING_OUTCUBIC, 1.5)
+                go.animate("/go1#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1.0, go.EASING_INCUBIC, 1.0)
+                go.animate("/go1", "position.y", go.PLAYBACK_LOOP_PINGPONG, -50, go.EASING_INBACK, 1)
             end)
 
             is_shock = true
