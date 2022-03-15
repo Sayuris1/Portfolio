@@ -32,7 +32,7 @@ local cursor_hashes = {
     }
 
 function init(self)
-    if html5.run("(typeof window.orientation !== 'undefined') ||(navigator.userAgent.indexOf('IEMobile') !== -1);") then
+    if html5.run("(typeof window.orientation !== 'undefined') ||(navigator.userAgent.indexOf('IEMobile') !== -1);") == "false" then
         sprite.play_flipbook("click#sprite", "mouse_click")
     end
     
