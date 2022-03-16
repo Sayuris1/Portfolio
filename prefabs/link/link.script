@@ -35,19 +35,11 @@ function init(self)
     if html5.run("(typeof window.orientation !== 'undefined') ||(navigator.userAgent.indexOf('IEMobile') !== -1);") == "false" then
         sprite.play_flipbook("click#sprite", "mouse_click")
     end
-
-    -- Html5 on_click event handler
-    defos.on_click(function ()
-        if link_url then
-            html5.run(cursor_hashes[link_url])
-            link_url = nil
-        end
-    end)
-
-    self.in_box = 0
     
 	go.set("click#sprite", "tint.w", 0)
     go.set_position(vmath.vector3(80, -200, 0), "click")
+
+    self.in_box = 0
 end
 
 
@@ -66,8 +58,7 @@ function on_message(self, message_id, message, sender)
                 go.animate("click#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 0.7)
             end
         end
-
-    elseif message_id == cursor.PRESSED then
-        link_url = message.id
+    elseif message_id == cursor.RELEASED and self.in_box > 0 then
+        html5.run(cursor_hashes[message.id])
     end
 end
