@@ -35,6 +35,16 @@ function init(self)
     if html5.run("(typeof window.orientation !== 'undefined') ||(navigator.userAgent.indexOf('IEMobile') !== -1);") == "false" then
         sprite.play_flipbook("click#sprite", "mouse_click")
     end
+
+    -- Html5 on_click event handler
+    defos.on_click(function ()
+        if link_url then
+            html5.run(cursor_hashes[link_url])
+            link_url = nil
+        end
+    end)
+
+    self.in_box = 0
     
 	go.set("click#sprite", "tint.w", 0)
     go.set_position(vmath.vector3(80, -200, 0), "click")
@@ -42,20 +52,22 @@ end
 
 
 function on_message(self, message_id, message, sender)
-	if message_id == TRIGGER and message.other_group == hash("player") then
+	if message_id == TRIGGER then
         if message.enter then
-            self.is_in_box = true
+            self.in_box = self.in_box + 1
 
             go.animate("click", "position.y", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_OUTBACK, 1)
             go.animate("click#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_LINEAR, 0.7)
         else
-            self.is_in_box = false
+            self.in_box = self.in_box - 1
 
-            go.animate("click", "position.y", go.PLAYBACK_ONCE_FORWARD, -200, go.EASING_INBACK, 1)
-            go.animate("click#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 0.7)
+            if self.in_box == 0 then
+                go.animate("click", "position.y", go.PLAYBACK_ONCE_FORWARD, -200, go.EASING_INBACK, 1)
+                go.animate("click#sprite", "tint.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 0.7)
+            end
         end
-    elseif message_id == cursor.RELEASED and self.is_in_box then
-        pprint(message.id)
-        html5.run(cursor_hashes[message.id])
+
+    elseif message_id == cursor.PRESSED then
+        link_url = message.id
     end
 end

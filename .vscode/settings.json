@@ -104,7 +104,8 @@
         "sprite",
         "json",
         "window",
-        "videoplayer"
+        "videoplayer",
+        "defos"
     ],
     "Lua.diagnostics.disable": [
         "lowercase-global",
