@@ -1337,7 +1337,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 40.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -1360,8 +1360,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 2.0
-    y: 2.0
+    x: 1.0
+    y: 1.0
     z: 2.0
   }
 }
@@ -1550,7 +1550,7 @@ embedded_instances {
   ""
   position {
     x: 0.0
-    y: -112.5
+    y: -225.0
     z: 0.0
   }
   rotation {
@@ -1560,8 +1560,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.25
-    y: 0.25
+    x: 0.5
+    y: 0.5
     z: 0.5
   }
 }
@@ -1829,8 +1829,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 45.0
-    y: -90.0
+    x: 83.0
+    y: -180.0
     z: 0.0
   }
   rotation {
@@ -1840,8 +1840,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.25
-    y: 0.25
+    x: 0.5
+    y: 0.5
     z: 1.0
   }
 }
