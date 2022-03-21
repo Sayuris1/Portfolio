@@ -19,7 +19,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-    if action_id == TOUCH then
+    if action_id == TOUCH and can_input then
         camera.follow(nil, "/player", {lerp = 0.02})
         go.animate("/camera#script", "zoom", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_OUTSINE, 3)
         

@@ -10,6 +10,7 @@ function init(self)
     self.blur_pred = render.predicate({"blur"}) -- Screen space blur
     self.star_pred = render.predicate({"star"})
     self.shock_pred = render.predicate({"shock"})
+    self.landscape_pred = render.predicate({"landscape"})
 
 	self.clear_color = vmath.vector4(0, 0, 0, 0)
 
@@ -36,71 +37,78 @@ function update(self)
 
     -- Set world view_proj and viewport
 	local viewport = camera.get_viewport()
-	render.set_viewport(viewport.x, viewport.y, viewport.z, viewport.w)
-	render.set_view(camera.get_view())
-	render.set_projection(camera.get_projection())
-    
-    -- Change buffer to blur target
-    render.set_render_target_size(self.horizantal_target, viewport.z, viewport.w)
-    render.set_render_target(self.horizantal_target)
-	render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
+    render.set_viewport(viewport.x, viewport.y, viewport.z, viewport.w)
+    render.set_view(camera.get_view())
+    render.set_projection(camera.get_projection())
 
-    -- Clear blur target
-	render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
+    if viewport.z < viewport.w then
+        can_input = false
+        render.draw(self.landscape_pred)
+    else
+        can_input = true
 
-    -- Draw to blur target
-    -- Only blur tiles
-	render.draw(self.tile_pred)
+        -- Change buffer to blur target
+        render.set_render_target_size(self.horizantal_target, viewport.z, viewport.w)
+        render.set_render_target(self.horizantal_target)
+        render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
 
-    render.set_render_target_size(self.vertical_target, viewport.z, viewport.w)
-    render.set_render_target(self.vertical_target)
-	render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
+        -- Clear blur target
+        render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
 
-    local vertical = render.constant_buffer()
-    vertical.u_dir = vmath.vector4(0, 1, 0, 0)
+        -- Draw to blur target
+        -- Only blur tiles
+        render.draw(self.tile_pred)
 
-    -- Change quat to screen space
-	render.set_view(IDENTITY)
-    render.set_projection(vmath.matrix4())
+        render.set_render_target_size(self.vertical_target, viewport.z, viewport.w)
+        render.set_render_target(self.vertical_target)
+        render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color})
 
-    render.enable_texture(0, self.horizantal_target, render.BUFFER_COLOR_BIT)
-    render.draw(self.blur_pred, vertical)
-    render.disable_texture(0)
+        local vertical = render.constant_buffer()
+        vertical.u_dir = vmath.vector4(0, 1, 0, 0)
 
-    -- Blur draw end
+        -- Change quat to screen space
+        render.set_view(IDENTITY)
+        render.set_projection(vmath.matrix4())
 
-    -- Change quat to screen space
-	render.set_view(IDENTITY)
-    render.set_projection(vmath.matrix4())
+        render.enable_texture(0, self.horizantal_target, render.BUFFER_COLOR_BIT)
+        render.draw(self.blur_pred, vertical)
+        render.disable_texture(0)
 
-    -- Change buffer to shock target
-    render.set_render_target_size(self.shock_target, viewport.z, viewport.w)
-    render.set_render_target(self.shock_target)
+        -- Blur draw end
 
-    -- Draw starfield
-    render.draw(self.star_pred)
+        -- Change quat to screen space
+        render.set_view(IDENTITY)
+        render.set_projection(vmath.matrix4())
 
-    render.enable_texture(0, self.vertical_target, render.BUFFER_COLOR_BIT)
-    render.draw(self.blur_pred)
-    render.disable_texture(0)
+        -- Change buffer to shock target
+        render.set_render_target_size(self.shock_target, viewport.z, viewport.w)
+        render.set_render_target(self.shock_target)
 
-    -- Set world view_proj
-	render.set_view(camera.get_view())
-	render.set_projection(camera.get_projection())
+        -- Draw starfield
+        render.draw(self.star_pred)
 
-    -- Draw normal
-    render.draw(self.tile_pred)
-    -- Shock target end
+        render.enable_texture(0, self.vertical_target, render.BUFFER_COLOR_BIT)
+        render.draw(self.blur_pred)
+        render.disable_texture(0)
 
-    -- Draw to screen
-    render.set_render_target(render.RENDER_TARGET_DEFAULT)
+        -- Set world view_proj
+        render.set_view(camera.get_view())
+        render.set_projection(camera.get_projection())
 
-    -- Change quat to screen space
-	render.set_view(IDENTITY)
-    render.set_projection(vmath.matrix4())
+        -- Draw normal
+        render.draw(self.tile_pred)
+        -- Shock target end
 
-    -- Draw shock effect end effected things
-    render.enable_texture(0, self.shock_target, render.BUFFER_COLOR_BIT)
-	render.draw(self.shock_pred)
-    render.disable_texture(0)
+        -- Draw to screen
+        render.set_render_target(render.RENDER_TARGET_DEFAULT)
+
+        -- Change quat to screen space
+        render.set_view(IDENTITY)
+        render.set_projection(vmath.matrix4())
+
+        -- Draw shock effect end effected things
+        render.enable_texture(0, self.shock_target, render.BUFFER_COLOR_BIT)
+        render.draw(self.shock_pred)
+        render.disable_texture(0)
+    end
 end
