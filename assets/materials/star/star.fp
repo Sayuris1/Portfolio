@@ -27,7 +27,7 @@ float fbm (vec2 st, vec2 pos) {
 float star_shape(vec2 uv, float flare){
     // Distance to center
     float dist = length(uv);
-    float circle = 0.04 / dist;
+    float circle = 0.01 / dist;
 
     // uv is from -0.5 to 0.5
     // So abs gives plus sign, then make it smaller and white
@@ -100,7 +100,6 @@ void main() {
 
     color += star_layer(uv + 10.0 + pos * 0.8, 1.0);
     color += star_layer(uv - 10.0 + pos * 0.6, 0.5);
-    color += star_layer(uv + pos * 0.3, 0.3);
 
     lowp vec4 tint_pm = vec4(tint.xyz * tint.w, tint.w);
 
